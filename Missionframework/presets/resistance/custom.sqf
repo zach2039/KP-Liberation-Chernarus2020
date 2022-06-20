@@ -1,6 +1,8 @@
 /*
     Needed Mods:
-    - None
+    - CUP Weapons
+    - CUP Vehicles
+    - CUP Units
 
     Optional Mods:
     - None
@@ -9,20 +11,30 @@
 /* Classnames of the guerilla faction which is friendly or hostile, depending on the civil reputation
 Standard loadout of the units will be replaced with a scripted one, which depends on the guerilla strength, after spawn */
 KP_liberation_guerilla_units = [
-    "I_G_Soldier_AR_F",
-    "I_G_engineer_F",
-    "I_G_officer_F",
-    "I_G_medic_F",
-    "I_G_Soldier_F",
-    "I_G_Soldier_LAT_F",
-    "I_G_Soldier_M_F",
-    "I_G_Soldier_SL_F"
+    "CUP_I_GUE_Soldier_AR",
+    "CUP_I_GUE_Engineer",
+    "CUP_I_GUE_Commander",
+    "CUP_I_GUE_Medic",
+    "CUP_I_GUE_Soldier_AKS74",
+    "CUP_I_GUE_Soldier_LAT",
+    "CUP_I_GUE_Sniper",
+    "CUP_I_GUE_Officer"
 ];
 
 // Armed vehicles
 KP_liberation_guerilla_vehicles = [
-    "I_G_Offroad_01_armed_F",
-    "I_G_Offroad_01_AT_F"
+    "CUP_I_Datsun_PK_Random",
+    "CUP_I_Datsun_PK_Random",
+    "CUP_I_Datsun_PK_Random",
+    "CUP_I_BMP2_NAPA",
+    "CUP_I_BRDM2_NAPA",
+    "CUP_I_BRDM2_NAPA",
+    "CUP_I_MTLB_pk_NAPA",
+    "CUP_I_MTLB_pk_NAPA",
+    "CUP_I_T34_NAPA",
+    "CUP_I_T34_NAPA",
+    "CUP_I_T55_NAPA",
+    "CUP_I_T72_NAPA"
 ];
 
 /* Guerilla Equipment
@@ -32,73 +44,64 @@ There are 3 tiers for every category. If the strength of the guerillas will incr
 ["Weaponclassname","Magazineclassname","magazine amount","optic","tripod"]
 You can leave optic and tripod empty with "" */
 KP_liberation_guerilla_weapons_1 = [
-    ["arifle_AKM_F","30Rnd_762x39_Mag_F",4,"",""],
-    ["arifle_AKS_F","30Rnd_545x39_Mag_F",4,"",""],
-    ["hgun_PDW2000_F","30Rnd_9x21_Mag",4,"",""],
-    ["SMG_01_F","30Rnd_45ACP_Mag_SMG_01",4,"",""],
-    ["SMG_02_F","30Rnd_9x21_Mag_SMG_02",4,"",""],
-    ["SMG_05_F","30Rnd_9x21_Mag_SMG_02",4,"",""]
+    ["CUP_srifle_CZ550","CUP_5x_22_LR_17_HMR_M",10,"",""],
+    ["CUP_srifle_CZ550_rail","CUP_5x_22_LR_17_HMR_M",10,"optic_mrco",""],
+    ["CUP_srifle_LeeEnfield","CUP_10x_303_M",10,"",""],
+    ["CUP_srifle_LeeEnfield_rail","CUP_10x_303_M",10,"cup_optic_sb_11_4x20_pm","cup_bipod_harris_1a2_I"],
+    ["CUP_glaunch_M79","CUP_1Rnd_HEDP_M203",16,"",""],
+    ["CUP_arifle_AK47_Early","CUP_30Rnd_762x39_AK47_M",4,"",""]
 ];
 
 KP_liberation_guerilla_weapons_2 = [
-    ["arifle_Katiba_F","30Rnd_65x39_caseless_green",4,"optic_ACO_grn",""],
-    ["arifle_Mk20_plain_F","30Rnd_556x45_Stanag",4,"optic_ACO_grn",""],
-    ["arifle_TRG21_F","30Rnd_556x45_Stanag",4,"optic_ACO_grn",""],
-    ["arifle_CTAR_blk_F","30Rnd_580x42_Mag_F",4,"optic_ACO_grn",""],
-    ["arifle_MX_SW_F","100Rnd_65x39_caseless_mag",3,"optic_ACO_grn","bipod_01_F_blk"],
-    ["srifle_DMR_06_olive_F","20Rnd_762x51_Mag",5,"optic_Hamr","bipod_01_F_blk"]
+    ["CUP_arifle_AK47_Early","CUP_30Rnd_762x39_AK47_M",4,"",""],
+    ["CUP_arifle_AK47_Early","CUP_30Rnd_762x39_AK47_M",4,"",""],
+    ["CUP_arifle_AKM","CUP_30Rnd_762x39_AK47_M",4,"cup_optic_pso_1_ak_open",""],
+    ["CUP_arifle_AK47_GL_Early","CUP_30Rnd_762x39_AK47_M",4,"",""],
+    ["CUP_arifle_RPK74","CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M",3,"optic_ACO_grn","bipod_01_F_blk"],
+    ["CUP_smg_SA61","CUP_50Rnd_B_765x17_Ball_M",5,"",""]
 ];
 
 KP_liberation_guerilla_weapons_3 = [
-    ["arifle_CTAR_blk_F","30Rnd_580x42_Mag_F",4,"optic_MRCO",""],
-    ["arifle_SPAR_01_blk_F","30Rnd_556x45_Stanag",4,"optic_MRCO",""],
-    ["arifle_SPAR_03_blk_F","20Rnd_762x51_Mag",5,"optic_MRCO",""],
-    ["arifle_ARX_blk_F","30Rnd_65x39_caseless_green",4,"optic_MRCO",""],
-    ["srifle_DMR_03_F","20Rnd_762x51_Mag",5,"optic_MRCO",""],
-    ["srifle_EBR_F","20Rnd_762x51_Mag",5,"optic_MRCO",""],
-    ["srifle_DMR_07_blk_F","20Rnd_650x39_Cased_Mag_F",5,"optic_DMS",""],
-    ["LMG_Mk200_F","200Rnd_65x39_cased_Box",2,"optic_MRCO","bipod_01_F_blk"]
+    ["CUP_arifle_AK47_Early","CUP_30Rnd_762x39_AK47_M",4,"",""],
+    ["CUP_arifle_AK74M","CUP_30Rnd_545x39_AK74M_M",4,"cup_optic_kobra",""],
+    ["CUP_arifle_AK74M_GL","CUP_30Rnd_545x39_AK74M_M",4,"cup_optic_kobra",""],
+    ["CUP_arifle_RPK74M_railed","CUP_60Rnd_545x39_AK74M_M",3,"cup_optic_zddot",""],
+    ["CUP_arifle_AK47_Early","CUP_30Rnd_762x39_AK47_M",4,"",""],
+    ["CUP_lmg_Pecheneg","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M",2,"optic_MRCO",""],
+    ["CUP_srifle_SVD","CUP_10Rnd_762x54_SVD_M",12,"cup_optic_pso_3_open",""],
+    ["CUP_srifle_SVD_wdl","CUP_10Rnd_762x54_SVD_M",12,"cup_optic_pso_3_open",""]
 ];
 
 // Uniforms
 KP_liberation_guerilla_uniforms_1 = [
-    "U_C_Poloshirt_blue",
-    "U_C_Poloshirt_burgundy",
-    "U_C_Poloshirt_salmon",
-    "U_C_Poloshirt_redwhite",
-    "U_C_Poloshirt_stripped",
-    "U_C_Poloshirt_tricolour",
-    "U_C_Poor_1",
-    "U_C_Man_casual_1_F",
-    "U_C_Man_casual_2_F",
-    "U_C_Man_casual_3_F",
-    "U_C_Man_casual_4_F",
-    "U_C_Man_casual_5_F",
-    "U_C_Man_casual_6_F",
-    "U_Marshal"
+    "CUP_U_I_Villager_03",
+    "CUP_U_I_Woodlander03",
+    "CUP_U_I_Woodlander_02",
+    "CUP_U_I_Worker_02",
+    "CUP_U_I_Villager_04",
+    "CUP_U_I_Woodlander_01",
+    "CUP_U_C_Woodlander_04",
+    "CUP_U_C_Citizen_04",
+    "CUP_U_C_Citizen_01"
+
 ];
 
 KP_liberation_guerilla_uniforms_2 = [
-    "U_I_C_Soldier_Bandit_1_F",
-    "U_I_C_Soldier_Bandit_2_F",
-    "U_I_C_Soldier_Bandit_3_F",
-    "U_I_C_Soldier_Bandit_4_F",
-    "U_I_C_Soldier_Bandit_5_F",
-    "U_BG_Guerilla2_1",
-    "U_BG_Guerilla2_2",
-    "U_BG_Guerilla2_3",
-    "U_BG_Guerilla3_1",
-    "U_C_HunterBody_grn",
-    "U_C_Mechanic_01_F",
-    "U_I_C_Soldier_Para_5_F",
-    "U_I_G_resistanceLeader_F"
+    "CUP_I_B_PMC_Unit_20",
+    "CUP_I_B_PMC_Unit_19",
+    "CUP_I_B_PMC_Unit_11",
+    "CUP_I_B_PMC_Unit_10",
+    "CUP_I_B_PMC_Unit_9",
+    "CUP_I_B_PMC_Unit_12",
+    "CUP_I_B_PMC_Unit_16",
+    "CUP_I_B_PMC_Unit_22"
 ];
 
 KP_liberation_guerilla_uniforms_3 = [
-    "U_BG_Guerilla1_1",
-    "U_BG_Guerilla1_2_F",
-    "U_BG_Guerrilla_6_1",
-    "U_BG_leader",
+    "CUP_U_I_GUE_Flecktarn2",
+    "CUP_U_I_GUE_Flecktarn3",
+    "CUP_U_I_GUE_Flecktarn",
+    "CUP_U_I_Gillie_Top",
     "U_I_C_Soldier_Para_1_F",
     "U_I_C_Soldier_Para_2_F",
     "U_I_C_Soldier_Para_3_F",
@@ -108,6 +111,7 @@ KP_liberation_guerilla_uniforms_3 = [
 
 // Vests
 KP_liberation_guerilla_vests_1 = [
+    "CUP_V_I_Guerilla_Jacket",
     "V_LegStrapBag_coyote_F",
     "V_LegStrapBag_olive_F",
     "V_LegStrapBag_black_F",
@@ -123,6 +127,7 @@ KP_liberation_guerilla_vests_1 = [
 ];
 
 KP_liberation_guerilla_vests_2 = [
+    "V_TacVestIR_blk",
     "V_Chestrig_rgr",
     "V_Chestrig_khk",
     "V_Chestrig_oli",
@@ -136,14 +141,12 @@ KP_liberation_guerilla_vests_2 = [
 ];
 
 KP_liberation_guerilla_vests_3 = [
-    "V_TacVest_brn",
-    "V_TacVest_khk",
     "V_TacVest_oli",
-    "V_TacVest_blk",
-    "V_I_G_resistanceLeader_F",
-    "V_TacVest_camo",
-    "V_TacChestrig_grn_F",
-    "V_TacChestrig_cbr_F",
+    "CUP_V_RUS_Smersh_2",
+    "CUP_V_I_Carrier_Belt",
+    "CUP_V_B_PASGT_OD",
+    "CUP_V_B_GER_Carrier_Rig",
+    "CUP_V_B_GER_Carrier_Vest_2",
     "V_TacChestrig_oli_F"
 ];
 
@@ -153,24 +156,18 @@ KP_liberation_guerilla_headgear_1 = [
     "",
     "",
     "",
-    "H_Hat_brown",
-    "H_Hat_grey",
-    "H_Hat_tan",
-    "H_Hat_checker",
-    "H_Hat_camo",
-    "H_Bandanna_surfer",
-    "H_Bandanna_surfer_grn",
-    "H_Bandanna_surfer_blk",
-    "H_Hat_Safari_olive_F",
-    "H_Hat_Safari_sand_F",
-    "H_Construction_basic_black_F",
-    "H_Helmet_Skate",
-    "H_Cap_blu",
-    "H_Cap_grn",
-    "H_Cap_tan",
-    "H_Cap_oli",
-    "H_Cap_red",
-    "H_Cap_blk"
+    "CUP_H_C_Ushanka_02",
+    "CUP_H_C_Ushanka_03",
+    "CUP_H_C_Ushanka_04",
+    "CUP_H_C_Ushanka_01",
+    "CUP_H_C_Beret_03",
+    "CUP_H_C_Beret_02",
+    "CUP_H_C_Beret_01",
+    "CUP_H_C_Beret_04",
+    "CUP_H_C_Beanie_01",
+    "CUP_H_C_Beanie_02",
+    "CUP_H_C_Beanie_03",
+    "CUP_H_C_Beanie_04"
 ];
 
 KP_liberation_guerilla_headgear_2 = [
@@ -181,27 +178,25 @@ KP_liberation_guerilla_headgear_2 = [
     "H_Bandanna_cbr",
     "H_Bandanna_sgg",
     "H_Bandanna_khk",
-    "H_Cap_blu",
-    "H_Cap_grn",
-    "H_Cap_tan",
-    "H_Cap_oli",
-    "H_Cap_red",
-    "H_Cap_blk",
+    "CUP_H_C_Ushanka_02",
+    "CUP_H_C_Ushanka_03",
+    "CUP_H_C_Ushanka_04",
+    "CUP_H_C_Ushanka_01",
+    "H_PASGT_basic_black_F",
+    "H_PASGT_basic_olive_F",
     "H_Cap_blk_Raven",
     "H_MilCap_dgtl"
 ];
 
 KP_liberation_guerilla_headgear_3 = [
-    "H_ShemagOpen_khk",
-    "H_ShemagOpen_tan",
+    "H_Shemag_olive",
+    "H_Shemag_olive_hs",
     "H_Shemag_olive",
     "H_Booniehat_khk",
     "H_Booniehat_oli",
-    "H_Booniehat_tan",
-    "H_Booniehat_dgtl",
-    "H_Booniehat_tna_F",
+    "CUP_H_Ger_Boonie_Flecktarn",
     "H_PASGT_basic_olive_F",
-    "H_PASGT_basic_white_F"
+    "CUP_H_GER_LWH_Flecktarn"
 ];
 
 // Facegear. Applies for tier 2 and 3.

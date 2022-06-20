@@ -1,10 +1,7 @@
 /*
     Needed Mods:
-    - None
-
-    Optional Mods:
-    - BWMod
     - RHSUSAF
+    - CUP Weapons
     - F-15C
     - F/A-18
     - CUP Weapons
@@ -12,6 +9,9 @@
     - USAF Main Pack
     - USAF Fighters Pack
     - USAF Utility Pack
+
+    Optional Mods:
+    - BWMod
 */
 
 /*
@@ -22,15 +22,15 @@
 */
 FOB_typename = "Land_Cargo_HQ_V1_F";                                    // This is the main FOB HQ building.
 FOB_box_typename = "B_Slingload_01_Cargo_F";                            // This is the FOB as a container.
-FOB_truck_typename = "B_Truck_01_box_F";                                // This is the FOB as a vehicle.
+FOB_truck_typename = "rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy";            // This is the FOB as a vehicle.
 Arsenal_typename = "B_supplyCrate_F";                                   // This is the virtual arsenal as portable supply crates.
-Respawn_truck_typename = "B_Truck_01_medical_F";                        // This is the mobile respawn (and medical) truck.
-huron_typename = "B_Heli_Transport_03_unarmed_F";                       // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
-crewman_classname = "B_crew_F";                                         // This defines the crew for vehicles.
-pilot_classname = "B_Helipilot_F";                                      // This defines the pilot for helicopters.
-KP_liberation_little_bird_classname = "B_Heli_Light_01_F";              // These are the little birds which spawn on the Freedom or at Chimera base.
+Respawn_truck_typename = "rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy";   // This is the mobile respawn (and medical) truck.
+huron_typename = "RHS_CH_47F";                                          // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
+crewman_classname = "rhsusf_army_ocp_combatcrewman";                    // This defines the crew for vehicles.
+pilot_classname = "rhsusf_army_ocp_helipilot";                          // This defines the pilot for helicopters.
+KP_liberation_little_bird_classname = "RHS_MELB_MH6M";                  // These are the little birds which spawn on the Freedom or at Chimera base.
 KP_liberation_boat_classname = "B_Boat_Transport_01_F";                 // These are the boats which spawn at the stern of the Freedom.
-KP_liberation_truck_classname = "B_Truck_01_transport_F";               // These are the trucks which are used in the logistic convoy system.
+KP_liberation_truck_classname = "rhsusf_M977A4_BKIT_usarmy_wd";         // These are the trucks which are used in the logistic convoy system.
 KP_liberation_small_storage_building = "ContainmentArea_02_sand_F";     // A small storage area for resources.
 KP_liberation_large_storage_building = "ContainmentArea_01_sand_F";     // A large storage area for resources.
 KP_liberation_recycle_building = "Land_RepairDepot_01_tan_F";           // The building defined to unlock FOB recycling functionality.
@@ -50,257 +50,605 @@ KP_liberation_fuel_crate = "CargoNet_01_barrels_F";                     // This 
     IMPORTANT: The last element inside each array must have no comma at the end!
 */
 infantry_units = [
-    ["B_Soldier_lite_F",15,0,0],                                        // Rifleman (Light)
-    ["B_Soldier_F",20,0,0],                                             // Rifleman
-    ["B_soldier_LAT_F",30,0,0],                                         // Rifleman (AT)
-    ["B_Soldier_GL_F",25,0,0],                                          // Grenadier
-    ["B_soldier_AR_F",25,0,0],                                          // Autorifleman
-    ["B_HeavyGunner_F",35,0,0],                                         // Heavygunner
-    ["B_soldier_M_F",30,0,0],                                           // Marksman
-    ["B_Sharpshooter_F",40,0,0],                                        // Sharpshooter
-    ["B_soldier_AT_F",50,10,0],                                         // AT Specialist
-    ["B_soldier_AA_F",50,10,0],                                         // AA Specialist
-    ["B_medic_F",30,0,0],                                               // Combat Life Saver
-    ["B_engineer_F",30,0,0],                                            // Engineer
-    ["B_soldier_exp_F",30,0,0],                                         // Explosives Specialist
-    ["B_recon_F",20,0,0],                                               // Recon Scout
-    ["B_recon_LAT_F",30,0,0],                                           // Recon Scout (AT)
-    ["B_recon_M_F",30,0,0],                                             // Recon Marksman
-    ["B_Recon_Sharpshooter_F",40,0,0],                                  // Recon Sharpshooter
-    ["B_recon_medic_F",30,0,0],                                         // Recon Paramedic
-    ["B_recon_exp_F",30,0,0],                                           // Recon Demolition Expert
-    ["B_sniper_F",70,5,0],                                              // Sniper
-    ["B_ghillie_ard_F",70,5,0],                                         // Sniper (Arid)
-    ["B_ghillie_lsh_F",70,5,0],                                         // Sniper (Lush)
-    ["B_ghillie_sard_F",70,5,0],                                        // Sniper (Semi-Arid)
-    ["B_spotter_F",20,0,0],                                             // Spotter
-    ["B_crew_F",10,0,0],                                                // Crewman
-    ["B_soldier_PG_F",20,0,0],                                          // Para Trooper
-    ["B_helicrew_F",10,0,0],                                            // Helicopter Crew
-    ["B_Helipilot_F",10,0,0],                                           // Helicopter Pilot
-    ["B_Pilot_F",10,0,0]                                                // Pilot
+    ["rhsusf_army_ocp_riflemanl",15,0,0],                               // Rifleman (Light)
+    ["rhsusf_army_ocp_rifleman",20,0,0],                                // Rifleman
+    ["rhsusf_army_ocp_riflemanat",30,0,0],                              // Rifleman (AT)
+    ["rhsusf_army_ocp_grenadier",25,0,0],                               // Grenadier
+    ["rhsusf_army_ocp_autorifleman",25,0,0],                            // Autorifleman
+    ["rhsusf_army_ocp_machinegunner",35,0,0],                           // Heavygunner
+    ["rhsusf_army_ocp_marksman",30,0,0],                                // Marksman
+    ["rhsusf_army_ocp_javelin",50,10,0],                                // AT Specialist
+    ["rhsusf_army_ocp_aa",50,10,0],                                     // AA Specialist
+    ["rhsusf_army_ocp_medic",30,0,0],                                   // Combat Life Saver
+    ["rhsusf_army_ocp_engineer",30,0,0],                                // Engineer
+    ["rhsusf_army_ocp_explosives",30,0,0],                              // Explosives Specialist
+    ["rhsusf_usmc_recon_marpat_wd_rifleman",20,0,0],                    // Recon Rifleman
+    ["rhsusf_usmc_recon_marpat_wd_rifleman_at",30,0,0],                 // Recon Rifleman (AT)
+    ["rhsusf_usmc_recon_marpat_wd_autorifleman",25,0,0],                // Recon Autorifleman
+    ["rhsusf_usmc_recon_marpat_wd_machinegunner",35,0,0],               // Recon Machine Gunner
+    ["rhsusf_usmc_recon_marpat_wd_marksman",30,0,0],                    // Recon Marksman
+    ["rhsusf_usmc_recon_marpat_wd_sniper_M107",70,5,0],                 // Recon Sniper (M107)
+    ["rhsusf_army_ocp_sniper",70,5,0],                                  // Sniper
+    ["rhsusf_army_ocp_sniper_m107",70,5,0],                             // Sniper (M107)
+    ["rhsusf_army_ocp_sniper_m24sws",70,5,0],                           // Sniper (M24 SWS)
+    ["rhsusf_army_ocp_combatcrewman",10,0,0],                           // Crewman
+    ["rhsusf_army_ocp_rifleman_101st",20,0,0],                          // Para Trooper
+    ["rhsusf_army_ocp_helicrew",10,0,0],                                // Helicopter Crew
+    ["rhsusf_army_ocp_helipilot",10,0,0],                               // Helicopter Pilot
+    ["rhsusf_airforce_jetpilot",10,0,0]                                 // Pilot
 ];
 
 light_vehicles = [
-    ["B_Quadbike_01_F",50,0,25],                                        // Quad Bike
-    ["B_LSV_01_unarmed_F",75,0,50],                                     // Prowler
-    ["B_LSV_01_armed_F",75,40,50],                                      // Prowler (HMG)
-    ["B_LSV_01_AT_F",75,60,50],                                         // Prowler (AT)
-    ["B_MRAP_01_F",100,0,50],                                           // Hunter
-    ["B_MRAP_01_hmg_F",100,40,50],                                      // Hunter (HMG)
-    ["B_MRAP_01_gmg_F",100,60,50],                                      // Hunter (GMG)
-    ["I_MRAP_03_F",100,0,50],                                           // Strider
-    ["I_MRAP_03_hmg_F",100,40,50],                                      // Strider (HMG)
-    ["I_MRAP_03_gmg_F",100,60,50],                                      // Strider (GMG)
-    ["rhsusf_m1025_w",100,0,50],                                        // M1025A2
-    ["rhsusf_m1025_w_m2",100,40,50],                                    // M1025A2 (M2)
-    ["rhsusf_m1025_w_mk19",100,60,50],                                  // M1025A2 (Mk19)
-    ["rhsusf_m998_w_2dr_fulltop",100,0,50],                             // M1097A2 (2D)
-    ["rhsusf_m998_w_2dr_halftop",100,0,50],                             // M1097A2 (2D / open back)
-    ["rhsusf_M1220_usarmy_wd",120,0,60],                                // M1220
-    ["rhsusf_M1220_M2_usarmy_wd",120,40,60],                            // M1220 (M2)
-    ["rhsusf_M1220_MK19_usarmy_wd",120,60,60],                          // M1220 (Mk19)
-    ["rhsusf_M1232_usarmy_wd",140,0,60],                                // M1220
-    ["rhsusf_M1232_M2_usarmy_wd",140,40,60],                            // M1220 (M2)
-    ["rhsusf_M1232_MK19_usarmy_wd",140,60,60],                          // M1220 (Mk19)
-    ["BWA3_Eagle_Fleck",100,0,50],                                      // Eagle IV
-    ["BWA3_Eagle_FLW100_Fleck",100,100,50],                             // Eagle IV (FLW 100)
-    ["rhsusf_M1230a1_usarmy_wd",120,0,60],                              // M1230A1 (MEDEVAC)
-    ["B_Truck_01_transport_F",125,0,75],                                // HEMTT Transport
-    ["B_Truck_01_covered_F",125,0,75],                                  // HEMTT Transport (Covered)
-    ["rhsusf_M1083A1P2_wd_open_fmtv_usarmy",125,0,75],                  // M1083A1P2 Transport
-    ["rhsusf_M1083A1P2_wd_fmtv_usarmy",125,0,75],                       // M1083A1P2 Transport (Covered)
-    ["rhsusf_M1083A1P2_WD_flatbed_fmtv_usarmy",100,0,50],               // M1083A1P2
-    ["rhsusf_M977A4_BKIT_usarmy_wd",125,0,75],                          // M977A4 BKIT
-    ["rhsusf_M977A4_BKIT_M2_usarmy_wd",125,40,75],                      // M977A4 BKIT (HMG)
-    ["rhsusf_M1117_W",150,50,50],                                       // M1117 ASV
-    ["B_UGV_01_F",150,0,50],                                            // UGV Stomper
-    ["B_UGV_01_rcws_F",150,40,50],                                      // UGV Stomper (RCWS)
-    ["B_Boat_Transport_01_F",100,0,25],                                 // Assault Boat
-    ["B_Boat_Armed_01_minigun_F",200,80,75],                            // Speedboat Minigun
-    ["rhsusf_mkvsoc",250,200,100],                                      // Mk.V SOCOM
-    ["B_SDV_01_F",150,0,50]                                             // SDV
+    // Personal vehicles
+    ["B_T_Quadbike_01_F",50,0,25],
+	["CUP_I_Datsun_4seat",50,0,25],
+	["CUP_O_Hilux_unarmed_CR_CIV_Tan",50,0,25],
+	
+	// Unarmed Cars
+	["CUP_I_M151_SYND",100,0,50],
+	["rhsusf_m1025_w",100,0,50],
+	["rhsusf_m1043_w",100,0,50],
+	["rhsusf_m998_w_2dr_halftop",100,0,50],
+	["rhsusf_m998_w_2dr",100,0,50],
+	["rhsusf_m998_w_4dr_fulltop",100,0,50],
+	["rhsusf_m998_w_4dr_halftop",100,0,50],
+	["rhsusf_m998_w_4dr",100,0,50],
+	["CUP_B_LR_Transport_GB_W",100,0,50],
+	["rhsusf_m1151_usarmy_wd",100,0,50],
+	["rhsusf_m1152_usarmy_wd",100,0,50],
+	["rhsusf_m1165_usarmy_wd",100,0,50],
+	
+
+	// LMG Cars
+	["rhsusf_m1151_m240_v1_usarmy_wd",100,50,50],
+	["rhsusf_m1151_m240_v2_usarmy_wd",100,50,50],
+
+	// HMG Cars
+	["CUP_I_M151_M2_SYND",100,100,50],
+	["CUP_B_LR_MG_GB_W",100,100,50],
+	["CUP_B_LR_Special_M2_GB_W",100,100,50],
+	["CUP_B_Jackal2_L2A1_GB_W",100,100,50],
+	["CUP_B_BAF_Coyote_L2A1_W",100,100,50],
+	["rhsusf_m1025_w_m2",100,100,50],
+	["rhsusf_m1043_w_m2",100,100,50],
+	["rhsusf_m1151_m2crows_usarmy_wd",100,100,50],
+	["rhsusf_m1151_m2_v1_usarmy_wd",100,100,50],
+	["rhsusf_m1151_m2_v2_usarmy_wd",100,100,50],
+	["rhsusf_m1151_m2_lras3_v1_usarmy_wd",100,100,50],
+	["rhsusf_m1151_m2_v2_usarmy_wd",100,100,50],
+	
+	// GMG Cars
+	["CUP_B_LR_Special_GMG_GB_W",100,150,50],
+	["CUP_B_BAF_Coyote_GMG_W",100,150,50],
+	["CUP_B_Jackal2_GMG_GB_W",100,150,50],
+	["rhsusf_m1025_w_mk19",100,150,50],
+	["rhsusf_m1025_w_mk19",100,150,50],
+	["rhsusf_m1043_w_mk19",100,150,50],
+	["rhsusf_m1151_mk19crows_usarmy_wd",100,150,50],
+	["rhsusf_m1151_mk19_v1_usarmy_wd",100,150,50],
+	["rhsusf_m1151_mk19_v2_usarmy_wd",100,150,50],
+
+	// AT Cars
+	["rhsusf_m966_w",100,200,50],
+	["rhsusf_m1045_w",100,200,50],
+	
+	// AA Cars
+	["CUP_B_nM1097_AVENGER_USA_WDL",100,200,50],
+
+	// Unarmed Trucks
+	["CUP_B_MTVR_BAF_WOOD",150,0,100],
+	["rhsusf_M1084A1P2_WD_fmtv_usarmy",150,0,100],
+	["rhsusf_M1084A1P2_B_WD_fmtv_usarmy",150,0,100],
+	["rhsusf_M1083A1P2_B_WD_fmtv_usarmy",150,0,100],
+	["rhsusf_M1083A1P2_WD_fmtv_usarmy",150,0,100],
+	["rhsusf_M977A4_usarmy_wd",150,0,100],
+	["rhsusf_M977A4_BKIT_usarmy_wd",150,0,100],
+
+	// HMG Trucks
+	["rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy",150,100,100],
+	["rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy",150,100,100],
+	["rhsusf_M977A4_BKIT_M2_usarmy_wd",150,100,100],
+	
+	// Artillery Trucks
+	["rhsusf_M142_usarmy_WD",100,1500,50],
+	
+	// Unarmed MRAPs
+	["rhsusf_CGRCAT1A2_usmc_wd",300,0,150],
+	["rhsusf_M1220_usarmy_wdwa",300,0,150],
+	["rhsusf_M1232_usarmy_wd",300,0,150],
+
+	// LMG MRAPs
+	["CUP_B_Mastiff_LMG_GB_W",300,50,150],
+	["CUP_B_Ridgback_LMG_GB_W",300,50,150],
+	["CUP_B_Wolfhound_LMG_GB_W",300,50,150],
+
+	// HMG MRAPs
+	["rhsusf_CGRCAT1A2_M2_usmc_wd",300,100,150],
+	["CUP_B_Ridgback_HMG_GB_W",300,100,150],
+	["CUP_B_Mastiff_HMG_GB_W",300,100,150],
+	["CUP_B_Wolfhound_HMG_GB_W",300,100,150],
+	["rhsusf_M1220_M153_M2_usarmy_wd",300,100,150],
+	["rhsusf_M1220_M2_usarmy_wd",300,100,150],
+	["rhsusf_M1230_M2_usarmy_wd",300,100,150],
+	["rhsusf_M1232_M2_usarmy_wd",300,100,150],
+	["rhsusf_M1237_M2_usarmy_wd",300,100,150],
+
+	// GMG MRAPs
+	["rhsusf_CGRCAT1A2_Mk19_usmc_wd",300,150,150],
+	["CUP_B_Ridgback_GMG_GB_W",300,150,150],
+	["CUP_B_Mastiff_GMG_GB_W",300,150,150],
+	["CUP_B_Wolfhound_GMG_GB_W",300,150,150],
+	["rhsusf_M1220_M153_MK19_usarmy_wd",300,150,150],
+	["rhsusf_M1220_MK19_usarmy_wd",300,150,150],
+	["rhsusf_M1230_MK19_usarmy_wd",300,150,150],
+	["rhsusf_M1232_MK19_usarmy_wd",300,150,150],
+	["rhsusf_M1237_MK19_usarmy_wd",300,150,150],
+	
+	// HMG/GMG MRAPs
+	["rhsusf_M1117_W",300,250,150],
+		
+	// Unarmed Boats
+	["pook_PBX_BLUFOR",100,0,25],
+	["rhsgref_hidf_canoe",100,0,25],
+	["rhsgref_hidf_rhib",100,0,25],
+	["C_Scooter_Transport_01_F",100,0,25],
+	
+	// Attack Boats
+	["pook_SOCR_M134b_USMC",200,150,100],
+	["pook_SOCR_M134_USMC",200,150,100],
+	["pook_SOCR_M2_USMC",200,150,100],
+	["pook_SOCR_M2b_USMC",200,150,100],
+	["pook_SOCR_H_M134b_USMC",200,150,100],
+	["pook_SOCR_H_M134_USMC",200,150,100],
+	["pook_SOCR_H_M2_USMC",200,150,100],
+	["pook_SOCR_H_M2b_USMC",200,150,100],
+	["pook_PBR_Transport_BLUFOR",200,150,100],
+	["pook_PBR_GUNBOAT_BLUFOR",200,150,100],
+	["CUP_B_RHIB_USMC",200,150,100],
+	["CUP_B_RHIB2Turret_USMC",200,150,100],
+
+	// Large Boats
+	["rhsusf_mkvsoc",1000,1000,500],
+	["CUP_B_MK10_GB",1000,1000,500],
+	["pook_LCAC_USMC",1000,1000,500],
+	["CUP_B_LCU1600_USMC",1000,1000,500],
+	["CUP_B_Frigate_ANZAC",1000,1000,500]
 ];
 
 heavy_vehicles = [
-    ["rhsusf_m113_usarmy",200,40,100],                                  // M113A3 (M2)
-    ["rhsusf_m113_usarmy_MK19",200,60,100],                             // M113A3 (Mk19)
-    ["rhsusf_m113_usarmy_medical",200,0,100],                           // M113A3 (Medical)
-    ["I_LT_01_scout_F",200,0,125],                                      // AWC 302 Nyx (AA)
-    ["B_APC_Wheeled_01_cannon_F",200,75,125],                           // AMV-7 Marshall
-    ["I_APC_Wheeled_03_cannon_F",200,75,125],                           // AFV-4 Gorgon
-    ["B_APC_Tracked_01_rcws_F",300,100,150],                            // IFV-6c Panther
-    ["I_APC_tracked_03_cannon_F",300,150,150],                          // FV-720 Mora
-    ["RHS_M2A2_BUSKI_WD",300,200,150],                                  // M2A2ODS (Busk I)
-    ["BWA3_Puma_Fleck",300,225,150],                                    // IFV Puma
-    ["RHS_M2A3_BUSKIII_wd",300,250,175],                                // M2A3 (Busk III)
-    ["B_APC_Tracked_01_AA_F",300,250,175],                              // IFV-6a Cheetah
-    ["I_LT_01_AA_F",300,250,175],                                       // AWC 302 Nyx (AA)
-    ["I_LT_01_AT_F",300,250,175],                                       // AWC 302 Nyx (AT)
-    ["I_LT_01_cannon_F",300,250,175],                                   // AWC 302 Nyx (Cannon)
-    ["RHS_M6_wd",300,250,175],                                          // M6A2
-    ["B_MBT_01_cannon_F",400,300,200],                                  // M2A1 Slammer
-    ["CUP_B_Challenger2_NATO",400,300,200],                             // FV4034 Challenger 2
-    ["I_MBT_03_cannon_F",400,300,200],                                  // MBT-52 Kuma
-    ["rhsusf_m1a1aim_tuski_wd",400,350,225],                            // M1A1SA (Tusk I)
-    ["B_MBT_01_TUSK_F",500,350,225],                                    // M2A4 Slammer UP
-    ["rhsusf_m1a2sep1tuskiiwd_usarmy",500,400,250],                     // M1A2SEPv1 (Tusk II)
-    ["BWA3_Leopard2_Fleck",500,400,250],                                // MBT Leopard 2A6M
-    ["B_AFV_Wheeled_01_cannon_F",500,500,250],                          // Rhino MGS
-    ["B_AFV_Wheeled_01_up_cannon_F",550,550,250],                       // Rhino MGS UP
-    ["B_MBT_01_arty_F",600,1250,300],                                   // M4 Scorcher
-    ["rhsusf_m109_usarmy",600,1250,300],                                // M109A6
-    ["B_MBT_01_mlrs_F",800,1750,400]                                    // M5 Sandstorm MLRS
+	// Unarmed APCs
+	["rhsusf_m113_usarmy_unarmed",500,0,200],
+	["CUP_B_AAV_Unarmed_USMC",500,0,200],
+
+	// LMG APCs
+	["CUP_B_LAV25_HQ_USMC",500,50,200],
+	["rhsusf_m113_usarmy_M240",500,50,200],
+	["CUP_B_FV432_Bulldog_GB_W",500,50,200],
+
+	// HMG APCs
+	["rhsusf_m113_usarmy",500,100,200],
+	["rhsusf_m113_usarmy_M2_90",500,100,200],
+	["CUP_B_FV432_Bulldog_GB_W_RWS",500,100,200],
+
+	// GMG APCs
+	["rhsusf_m113_usarmy_MK19",500,150,200],
+	
+	// GMG/HMG APCs
+	["CUP_B_AAV_USMC",500,250,200],
+	
+	// AC/LMG APCs
+	["CUP_B_LAV25_USMC",500,300,200],
+	["CUP_B_MCV80_GB_W",500,300,200],
+	["CUP_B_MCV80_GB_W_SLAT",500,300,200],
+	["CUP_B_FV510_GB_W",500,300,200],
+	["CUP_B_FV510_GB_W_SLAT",500,300,200],
+	
+	// AC/2xLMG APCs
+	["CUP_B_LAV25M240_USMC",500,350,200],
+	["RHS_M2A2_wd",500,350,200],
+	["RHS_M2A2_BUSKI_WD",500,350,200],
+	["RHS_M2A3_wd",500,350,200],
+	["RHS_M2A3_BUSKI_wd",500,350,200],
+	["RHS_M2A3_BUSKIII_wd",500,350,200],
+	
+	// AA/AC APCs
+	["RHS_M6_wd",500,500,200],
+	
+	// Light Tanks
+	["CUP_B_M60A3_TTS_USMC",750,750,300],
+	["CUP_B_Leopard2A6_GER",750,750,300],
+	["CUP_B_Challenger2_Woodland_BAF",750,750,300],
+	["rhsusf_m1a1hc_wd",750,750,300],
+	["rhsusf_m1a1aimwd_usarmy",750,750,300],
+	["rhsusf_m1a1fep_wd",750,750,300],
+	["rhsusf_m1a2sep1wd_usarmy",750,750,300],
+	["rhsusf_m1a2sep2wd_usarmy",750,750,300],
+	
+	// Heavy Tanks
+	["rhsusf_m1a1aim_tuski_wd",1000,750,400],
+	["rhsusf_m1a2sep1tuskiwd_usarmy",1000,750,400],
+	["rhsusf_m1a2sep1tuskiiwd_usarmy",1000,750,400],
+	
+	// Artillery
+	["rhsusf_m109_usarmy",600,1250,300]
 ];
 
 air_vehicles = [
-    ["B_UAV_01_F",75,0,25],                                             // AR-2 Darter
-    ["B_UAV_06_F",80,0,30],                                             // AL-6 Pelican (Cargo)
-    ["B_Heli_Light_01_F",200,0,100],                                    // MH-9 Hummingbird
-    ["B_Heli_Light_01_dynamicLoadout_F",200,100,100],                   // AH-9 Pawnee
-    ["RHS_MELB_MH6M",200,0,100],                                        // MH-6M Little Bird
-    ["RHS_MELB_AH6M",200,200,100],                                      // AH-6M Pawnee
-    ["I_Heli_light_03_unarmed_F",225,0,125],                            // WY-55 Hellcat
-    ["I_Heli_light_03_dynamicLoadout_F",225,200,125],                   // WY-55 Hellcat (Armed)
-    ["RHS_UH1Y_UNARMED",225,0,125],                                     // UH-1Y (Unarmed)
-    ["RHS_UH1Y_GS",225,200,125],                                        // UH-1Y (Ground Suppression)
-    ["B_Heli_Attack_01_dynamicLoadout_F",500,400,200],                  // AH-99 Blackfoot
-    ["RHS_AH1Z",500,500,200],                                           // AH-1Z (Multi-Role)
-    ["RHS_AH64D_wd",750,750,250],                                       // AH-64D (Multi-Role)
-    ["BWA3_Tiger_RMK_Universal",750,750,250],                           // UH Tiger RMK (Universal)
-    ["B_Heli_Transport_01_F",250,80,150],                               // UH-80 Ghost Hawk
-    ["B_Heli_Transport_01_camo_F",250,80,150],                          // UH-80 Ghost Hawk (Camo)
-    ["RHS_UH60M2",250,0,150],                                           // UH-60M (Unarmed)
-    ["RHS_UH60M",250,80,150],                                           // UH-60M
-    ["RHS_UH60M_MEV2",300,0,150],                                       // UH-60M MEV2
-    ["RHS_CH_47F",275,80,175],                                          // CH-47 Chinook (Armed)
-    ["I_Heli_Transport_02_F",275,0,175],                                // CH-49 Mohawk
-    ["rhsusf_CH53E_USMC",300,0,175],                                    // CH-53E Super Stallion
-    ["rhsusf_CH53E_USMC_GAU21_D",300,100,175],                          // CH-53E Super Stallion (GAU-21)
-    ["B_Heli_Transport_03_F",300,80,175],                               // CH-67 Huron (Armed)
-    ["USAF_C130J",200,0,250],                                           // C-130J Super Hercules
-    ["USAF_C130J_Cargo",200,0,250],                                     // C-130J Super Hercules (Cargo)
-    ["USAF_C17",500,0,400],                                             // C-17 Globemaster III
-    ["usaf_kc135",600,0,2500],                                          // KC-135 Stratotanker
-    ["B_UAV_02_dynamicLoadout_F",400,400,200],                          // MQ-4A Greyhawk
-    ["B_T_UAV_03_dynamicLoadout_F",450,500,250],                        // MQ-12 Falcon
-    ["B_UAV_05_F",500,500,200],                                         // UCAV Sentinel
-    ["USAF_RQ4A",500,0,200],                                            // RQ-4A Global Hawk
-    ["USAF_MQ9",500,750,200],                                           // MQ-9 Reaper
-    ["I_Plane_Fighter_03_dynamicLoadout_F",500,400,350],                // A-143 Buzzard
-    ["B_Plane_CAS_01_dynamicLoadout_F",1000,800,400],                   // A-164 Wipeout (CAS)
-    ["RHS_A10",1000,1000,400],                                          // A-10A (CAS)
-    ["USAF_A10",1500,1000,400],                                         // A-10C Thunderbolt II
-    ["I_Plane_Fighter_04_F",1000,1200,400],                             // A-149 Gryphon
-    ["FIR_F15C",1250,1250,450],                                         // F-15C Eagle
-    ["FIR_F15D",1250,1250,450],                                         // F-15D Eagle
-    ["FIR_F15E",1250,1500,450],                                         // F-15E Strike Eagle
-    ["JS_JC_FA18E",1500,1750,450],                                      // F/A-18 E Super Hornet
-    ["JS_JC_FA18F",1500,1750,450],                                      // F/A-18 F Super Hornet
-    ["USAF_F22",1800,2000,500],                                         // F-22A Raptor
-    ["USAF_F22_EWP_AA",1800,2100,500],                                  // F-22A Raptor (EWP-AA)
-    ["USAF_F22_EWP_AG",1800,2100,500],                                  // F-22A Raptor (EWP-AG)
-    ["USAF_F22_Heavy",1800,2250,500],                                   // F-22A Raptor (Heavy)
-    ["USAF_F35A_STEALTH",2250,2000,750],                                // F-35A Lightning II
-    ["USAF_F35A",2250,2250,750],                                        // F-35A Lightning II (Heavy)
-    ["B_Plane_Fighter_01_F",1500,1750,450],                             // F/A-181 Black Wasp II
-    ["B_Plane_Fighter_01_Stealth_F",1500,1750,450],                     // F/A-181 Black Wasp II (Stealth)
-    ["B_T_VTOL_01_armed_F",750,1500,500],                               // V-44 X Blackfish (Armed)
-    ["B_T_VTOL_01_infantry_F",750,0,500],                               // V-44 X Blackfish (Infantry)
-    ["B_T_VTOL_01_vehicle_F",750,0,500]                                 // V-44 X Blackfish (Vehicle)
+	// Unarmed Helicopters
+	["RHS_MELB_H6M",300,0,150],
+	["RHS_MELB_MH6M",300,0,150],
+	["RHS_UH1Y_UNARMED",300,0,150],
+	["RHS_UH60M2",300,0,150],
+	["RHS_UH60M_ESSS",300,0,150],
+	["CUP_B_Merlin_HC3_GBd",300,0,150],
+	["RHS_CH_47F_cargo",300,0,150],
+	["rhsusf_CH53E_USMC",300,0,150],
+	["rhsusf_CH53e_USMC_cargo",300,0,150],
+	
+	// Armed Helicopters
+	["RHS_UH1Y_FFAR",300,300,150],
+	["RHS_UH60M",300,300,150],
+	["CUP_B_Merlin_HC3A_Armed_GB",300,300,150],
+	["RHS_CH_47F",300,300,150],
+	["rhsusf_CH53E_USMC_GAU21",300,300,150],
+
+	// Attack Helicopters
+	["RHS_MELB_AH6M",600,600,300],
+	["CUP_B_AW159_GB",600,600,300],
+	["RHS_AH1Z_wd",600,600,300],
+	["RHS_AH64D_wd",600,600,300],
+	
+	// Unarmed Planes
+	["CUP_B_CESSNA_T41_UNARMED_USA",300,0,150],
+	["CUP_B_C47_USA",300,0,150],
+	["CUP_B_MV22_USMC",300,0,150],
+	["USAF_C130J",300,0,150],
+	["USAF_C130J_Cargo",300,0,150],
+
+	// Planes
+	["CUP_B_CESSNA_T41_ARMED_USA",300,100,150],
+	["CUP_B_AC47_Spooky_USA",300,100,150],
+	["CUP_B_MV22_USMC_RAMPGUN",300,100,150],
+	
+	// Unarmed Jets
+	["usaf_kc135",750,0,350],
+	["USAF_C17d",750,0,350],
+	
+	// Jets
+	["RHS_A10",1000,1000,400],              
+	["CUP_B_AV8B_DYN_USMC",1000,1000,400],
+    ["USAF_A10",1500,1000,400],             
+    ["FIR_F15C",1250,1250,450],             
+    ["FIR_F15D",1250,1250,450],             
+    ["FIR_F15E",1250,1500,450],             
+	["FIR_F18C_VFA15",1250,1500,450],
+	["FIR_F18D_VMFAAW224_02",1250,1500,450],
+    ["USAF_F22",1800,2000,500],             
+    ["USAF_F22_EWP_AA",1800,2100,500],      
+    ["USAF_F22_EWP_AG",1800,2100,500],      
+    ["USAF_F22_Heavy",1800,2250,500],       
+    ["USAF_F35A_STEALTH",2250,2000,750],    
+    ["USAF_F35A",2250,2250,750]             
 ];
 
 static_vehicles = [
-    ["B_HMG_01_F",25,40,0],                                             // Mk30A HMG .50
-    ["B_HMG_01_high_F",25,40,0],                                        // Mk30 HMG .50 (Raised)
-    ["B_HMG_01_A_F",35,40,0],                                           // Mk30 HMG .50 (Autonomous)
-    ["B_GMG_01_F",35,60,0],                                             // Mk32A GMG 20mm
-    ["B_GMG_01_high_F",35,60,0],                                        // Mk32 GMG 20mm (Raised)
-    ["B_GMG_01_A_F",45,60,0],                                           // Mk32 GMG 20mm (Autonomous)
-    ["B_static_AT_F",50,100,0],                                         // Static Titan Launcher (AT)
-    ["B_static_AA_F",50,100,0],                                         // Static Titan Launcher (AA)
-    ["B_Mortar_01_F",80,150,0],                                         // Mk6 Mortar
-    ["RHS_M119_WD",100,200,0],                                          // M119A2
-    ["B_SAM_System_03_F",250,500,0]                                     // MIM-145 Defender
+	["B_W_Static_Designator_01_F",50,0,0],
+	["CUP_B_SearchLight_static_USMC",50,0,0],
+	["RHS_M2StaticMG_MiniTripod_WD",50,100,0],
+	["RHS_M2StaticMG_WD",50,100,0],
+	["I_E_HMG_02_F",50,100,0],
+	["I_E_HMG_02_high_F",50,100,0],
+	["RHS_MK19_TriPod_WD",50,150,0],
+	["CUP_B_M134_A_USMC",50,150,0],
+	["rhsgref_cdf_b_ZU23",50,150,0],
+	["RHS_TOW_TriPod_WD",50,250,0],
+	["RHS_Stinger_AA_pod_WD",50,250,0],                              
+	["RHS_M252_WD",80,250,0],                                     
+	["RHS_M119_WD",100,250,0],                                        
+    ["B_SAM_System_03_F",250,500,0]
 ];
 
 buildings = [
-    ["Land_Cargo_House_V1_F",0,0,0],
-    ["Land_Cargo_Patrol_V1_F",0,0,0],
-    ["Land_Cargo_Tower_V1_F",0,0,0],
-    ["Flag_NATO_F",0,0,0],
-    ["Flag_US_F",0,0,0],
-    ["BWA3_Flag_Ger_F",0,0,0],
-    ["Flag_UK_F",0,0,0],
-    ["Flag_White_F",0,0,0],
-    ["Land_Medevac_house_V1_F",0,0,0],
-    ["Land_Medevac_HQ_V1_F",0,0,0],
-    ["Flag_RedCrystal_F",0,0,0],
-    ["CamoNet_BLUFOR_F",0,0,0],
-    ["CamoNet_BLUFOR_open_F",0,0,0],
-    ["CamoNet_BLUFOR_big_F",0,0,0],
-    ["Land_PortableLight_single_F",0,0,0],
-    ["Land_PortableLight_double_F",0,0,0],
-    ["Land_LampSolar_F",0,0,0],
-    ["Land_LampHalogen_F",0,0,0],
-    ["Land_LampStreet_small_F",0,0,0],
-    ["Land_LampAirport_F",0,0,0],
-    ["Land_HelipadCircle_F",0,0,0],                                     // Strictly aesthetic - as in it does not increase helicopter cap!
-    ["Land_HelipadRescue_F",0,0,0],                                     // Strictly aesthetic - as in it does not increase helicopter cap!
-    ["PortableHelipadLight_01_blue_F",0,0,0],
-    ["PortableHelipadLight_01_green_F",0,0,0],
-    ["PortableHelipadLight_01_red_F",0,0,0],
-    ["Land_CampingChair_V1_F",0,0,0],
-    ["Land_CampingChair_V2_F",0,0,0],
-    ["Land_CampingTable_F",0,0,0],
-    ["MapBoard_altis_F",0,0,0],
-    ["MapBoard_stratis_F",0,0,0],
-    ["MapBoard_seismic_F",0,0,0],
-    ["Land_Pallet_MilBoxes_F",0,0,0],
-    ["Land_PaperBox_open_empty_F",0,0,0],
-    ["Land_PaperBox_open_full_F",0,0,0],
-    ["Land_PaperBox_closed_F",0,0,0],
-    ["Land_DieselGroundPowerUnit_01_F",0,0,0],
-    ["Land_ToolTrolley_02_F",0,0,0],
-    ["Land_WeldingTrolley_01_F",0,0,0],
-    ["Land_Workbench_01_F",0,0,0],
-    ["Land_GasTank_01_blue_F",0,0,0],
-    ["Land_GasTank_01_khaki_F",0,0,0],
-    ["Land_GasTank_01_yellow_F",0,0,0],
-    ["Land_GasTank_02_F",0,0,0],
-    ["Land_BarrelWater_F",0,0,0],
-    ["Land_BarrelWater_grey_F",0,0,0],
-    ["Land_WaterBarrel_F",0,0,0],
-    ["Land_WaterTank_F",0,0,0],
-    ["Land_BagFence_Round_F",0,0,0],
-    ["Land_BagFence_Short_F",0,0,0],
-    ["Land_BagFence_Long_F",0,0,0],
-    ["Land_BagFence_Corner_F",0,0,0],
-    ["Land_BagFence_End_F",0,0,0],
-    ["Land_BagBunker_Small_F",0,0,0],
-    ["Land_BagBunker_Large_F",0,0,0],
-    ["Land_BagBunker_Tower_F",0,0,0],
-    ["Land_HBarrier_1_F",0,0,0],
-    ["Land_HBarrier_3_F",0,0,0],
-    ["Land_HBarrier_5_F",0,0,0],
-    ["Land_HBarrier_Big_F",0,0,0],
-    ["Land_HBarrierWall4_F",0,0,0],
-    ["Land_HBarrierWall6_F",0,0,0],
-    ["Land_HBarrierWall_corner_F",0,0,0],
-    ["Land_HBarrierWall_corridor_F",0,0,0],
-    ["Land_HBarrierTower_F",0,0,0],
-    ["Land_CncBarrierMedium_F",0,0,0],
-    ["Land_CncBarrierMedium4_F",0,0,0],
-    ["Land_Concrete_SmallWall_4m_F",0,0,0],
-    ["Land_Concrete_SmallWall_8m_F",0,0,0],
-    ["Land_CncShelter_F",0,0,0],
-    ["Land_CncWall1_F",0,0,0],
-    ["Land_CncWall4_F",0,0,0],
-    ["Land_Sign_WarningMilitaryArea_F",0,0,0],
-    ["Land_Sign_WarningMilAreaSmall_F",0,0,0],
-    ["Land_Sign_WarningMilitaryVehicles_F",0,0,0],
-    ["Land_Razorwire_F",0,0,0],
-    ["Land_ClutterCutter_large_F",0,0,0]
+    ["Flag_NATO_F",0,0,0],												// Flag
+    ["Flag_US_F",0,0,0],												// Flag
+    ["BWA3_Flag_Ger_F",0,0,0],											// Flag
+    ["Flag_UK_F",0,0,0],												// Flag
+    ["Flag_White_F",0,0,0],												// Flag
+	["Flag_RedCrystal_F",0,0,0],										// Flag
+	["Land_Sign_WarningMilitaryArea_F",0,0,0],							// Sign
+    ["Land_Sign_WarningMilAreaSmall_F",0,0,0],							// Sign
+    ["Land_Sign_WarningMilitaryVehicles_F",0,0,0],						// Sign
+	["Land_HelipadCircle_F",0,0,0],                                     // Marking
+    ["Land_HelipadRescue_F",0,0,0],                                     // Marking
+    ["Land_PortableLight_single_F",0,0,0],								// Light
+    ["Land_PortableLight_double_F",0,0,0],								// Light
+    ["Land_LampSolar_F",5,0,0],											// Light
+    ["Land_LampHalogen_F",5,0,0],										// Light
+    ["Land_LampStreet_small_F",5,0,0],									// Light
+	["Land_LampDecor_F",5,0,0],											// Light
+	["Land_LampHarbour_F",5,0,0],										// Light
+    ["Land_LampShabby_F",5,0,0],										// Light
+	["Land_LampStreet_F",5,0,0],										// Light
+	["Land_LampAirport_F",5,0,0],										// Light
+    ["PortableHelipadLight_01_blue_F",5,0,0],							// Light
+    ["PortableHelipadLight_01_green_F",5,0,0],							// Light
+    ["PortableHelipadLight_01_red_F",5,0,0],							// Light
+	["Land_BarrelWater_F",0,0,0],										// Cover
+    ["Land_BarrelWater_grey_F",0,0,0],									// Cover
+    ["Land_WaterBarrel_F",0,0,0],										// Cover
+    ["Land_WaterTank_F",0,0,0],											// Cover
+	["Land_CinderBlocks_F",0,0,0],										// Cover
+	["Land_Coil_F",0,0,0],												// Cover
+	["Land_Pallet_vertical_F",0,0,0],									// Cover
+	["Land_Bricks_V1_F",0,0,0],											// Cover
+	["Land_Bricks_V4_F",0,0,0],											// Cover
+	["Land_Tank_rust_F",0,0,0],											// Cover
+	["Land_WoodenBox_F",0,0,0],											// Cover
+	["Vec03",0,0,0],													// Cover
+	["Pile_of_wood",0,0,0],												// Cover
+    ["Land_Razorwire_F",0,0,0],											// Fencing
+	["Land_Pipe_fence_4m_F",0,0,0],										// Fencing
+	["WireFence",0,0,0],												// Fencing
+	["Wire",0,0,0],														// Fencing
+	["Land_GameProofFence_01_l_5m_F",0,0,0],							// Fencing
+	["Land_GameProofFence_01_l_gate_F",0,0,0],							// Fencing
+	["Land_GameProofFence_01_l_pole_F",0,0,0],							// Fencing
+	["Land_WiredFence_01_16m_F",0,0,0],									// Fencing
+	["Land_WiredFence_01_4m_F",0,0,0],									// Fencing
+	["Land_WiredFence_01_8m_F",0,0,0],									// Fencing
+	["Land_WiredFence_01_pole_45_F",0,0,0],								// Fencing
+	["Land_WiredFence_01_gate_F",0,0,0],								// Fencing
+	["Land_WiredFence_01_pole_F",0,0,0],								// Fencing
+	["Land_TinWall_02_l_4m_F",0,0,0],									// Fencing
+	["Land_TinWall_02_l_8m_F",0,0,0],									// Fencing
+	["Land_TinWall_02_l_pole_F",0,0,0],									// Fencing
+	["Land_Wall_Tin_Pole",0,0,0],										// Fencing
+	["Land_BarGate_F",0,0,0],											// Fencing
+	["Land_BarGate2",0,0,0],											// Fencing
+	["Land_RoadBarrier_01_F",0,0,0],									// Fencing
+	["Land_CrashBarrier_01_4m_F",0,0,0],								// Fencing
+	["Land_CrashBarrier_01_8m_F",0,0,0],								// Fencing
+	["Land_CrashBarrier_01_end_L_F",0,0,0],								// Fencing
+	["Land_CrashBarrier_01_end_R_F",0,0,0],								// Fencing
+	["Land_PipeFence_02_s_4m_F",0,0,0],									// Fencing
+	["Land_PipeFence_02_s_8m_F",0,0,0],									// Fencing
+	["Land_TinWall_01_m_4m_v2_F",0,0,0],								// Fencing
+	["Land_WoodenWall_01_m_4m_F",0,0,0],								// Fencing
+	["Land_WoodenWall_01_m_8m_F",0,0,0],								// Fencing
+	["Land_Slums02_4m",0,0,0],											// Fencing
+	["Land_PoleWall_01_3m_F",0,0,0],									// Fencing
+	["Land_PoleWall_01_6m_F",0,0,0],									// Fencing
+	["Land_PoleWall_01_pole_F",0,0,0],									// Fencing
+	["Land_SlumWall_01_s_2m_F",0,0,0],									// Fencing
+	["Land_SlumWall_01_s_4m_F",0,0,0],									// Fencing
+	["Land_WoodenWall_04_s_gate_F",0,0,0],								// Fencing
+	["Land_WoodenWall_05_m_4m_v1_F",0,0,0],								// Fencing
+	["Land_WoodenWall_05_m_end_F",0,0,0],								// Fencing
+	["Hedgehog",10,0,0],												// Anti-vehicle barrier
+	["Hhedgehog_concrete",10,0,0],										// Anti-vehicle barrier
+	["Land_jezekbeton",10,0,0],											// Anti-vehicle barrier
+	["Land_DragonsTeeth_01_4x2_old_F",10,0,0],							// Anti-tank barrier
+	["Land_DragonsTeeth_01_4x2_old_redwhite_F",10,0,0],					// Anti-tank barrier
+	["Land_DragonsTeeth_01_1x1_old_F",10,0,0],							// Anti-tank barrier
+	["Land_DragonsTeeth_01_1x1_old_redwhite_F",10,0,0],					// Anti-tank barrier
+    ["Land_BagFence_Round_F",0,0,0],									// Sandbag barrier
+    ["Land_BagFence_Short_F",0,0,0],									// Sandbag barrier
+    ["Land_BagFence_Long_F",0,0,0],										// Sandbag barrier
+    ["Land_BagFence_Corner_F",0,0,0],									// Sandbag barrier
+    ["Land_BagFence_End_F",0,0,0],										// Sandbag barrier
+	["Land_SandbagBarricade_01_half_F",0,0,0],							// Sandbag barrier
+	["Land_SandbagBarricade_01_F",0,0,0],								// Sandbag barrier
+	["Land_SandbagBarricade_01_hole_F",0,0,0],							// Sandbag barrier
+	["Land_fort_bagfence_long",0,0,0],									// Sandbag barrier
+	["Land_fort_bagfence_corner",0,0,0],								// Sandbag barrier
+	["Land_fort_bagfence_round",0,0,0],									// Sandbag barrier
+    ["Land_HBarrier_1_F",5,0,0],										// H-barrier
+    ["Land_HBarrier_3_F",5,0,0],										// H-barrier
+    ["Land_HBarrier_5_F",5,0,0],										// H-barrier
+    ["Land_HBarrier_Big_F",5,0,0],										// H-barrier
+    ["Land_HBarrierWall4_F",5,0,0],										// H-barrier
+    ["Land_HBarrierWall6_F",5,0,0],										// H-barrier
+    ["Land_HBarrierWall_corner_F",5,0,0],								// H-barrier
+    ["Land_HBarrierWall_corridor_F",5,0,0],								// H-barrier
+	["Base_WarfareBBarrier10x",5,0,0],									// H-barrier
+	["Base_WarfareBBarrier10xTall",5,0,0],								// H-barrier
+    ["Land_HBarrierTower_F",10,0,0],									// H-barrier
+	["Land_BagBunker_Small_F",0,0,0],									// Sandbag structure
+    ["Land_BagBunker_Large_F",0,0,0],									// Sandbag structure
+    ["Land_BagBunker_Tower_F",10,0,0],									// H-barrier structure
+	["Land_Pipes_large_F",0,0,0],										// Makeshift barrier
+	["Land_Timbers_F",0,0,0],											// Makeshift barrier
+	["Land_Sea_Wall_F",0,0,0],											// Makeshift barrier
+	["Land_Tyres_F",0,0,0],												// Makeshift barrier
+	["Land_Tyre_01_line_x5_F",0,0,0],									// Makeshift barrier
+	["Land_BasaltKerb_01_pile_F",0,0,0],								// Makeshift barrier
+	["Land_SCF_01_heap_sugarcane_F",0,0,0],								// Makeshift barrier
+	["Land_SCF_01_heap_bagasse_F",0,0,0],								// Makeshift barrier
+	["Land_wagon_box",0,0,0],											// Makeshift barrier
+	["Land_wagon_flat",0,0,0],											// Makeshift barrier
+	["Land_wagon_tanker",0,0,0],										// Makeshift barrier
+	["Land_Mound03_8m_F",0,0,0],										// Makeshift barrier
+	["Land_Mound04_8m_F",0,0,0],										// Makeshift barrier
+	["Fort_EnvelopeBig",5,0,0],											// Barrier
+	["Fort_EnvelopeSmall",5,0,0],										// Barrier
+	["Land_CncBarrier_F",5,0,0],										// Barrier
+    ["Land_CncBarrierMedium_F",5,0,0],									// Barrier
+    ["Land_CncBarrierMedium4_F",5,0,0],									// Barrier
+	["pook_Land_fort_rampart",5,0,0],									// Barrier
+	["pook_Land_fort_artillery_nest",5,0,0],							// Barrier
+	["Land_prolejzacka",5,0,0],											// Barrier
+	["Land_Trench_01_forest_F",5,0,0],									// Barrier
+	["Land_TrenchFrame_01_F",5,0,0],									// Barrier
+	["Land_Ancient_Wall_4m_F",5,0,0],									// Barrier
+	["Land_Ancient_Wall_8m_F",5,0,0],									// Barrier
+	["Land_Stone_4m_F",10,0,0],											// Wall
+	["Land_Stone_Gate_F",10,0,0],										// Wall
+	["Land_Stone_8m_F",10,0,0],											// Wall
+	["Land_Stone_8mD_F",10,0,0],										// Wall
+	["Land_Stone_pillar_F",10,0,0],										// Wall
+	["Land_Wall_IndCnc_4_F",10,0,0],									// Wall
+	["Land_Wall_IndCnc_4_D_F",10,0,0],									// Wall
+	["Land_Wall_IndCnc_Pole_F",10,0,0],									// Wall
+	["Land_Mil_WallBig_4m_F",10,0,0],									// Wall
+	["Land_Mil_WallBig_Corner_F",10,0,0],								// Wall
+	["Land_Concrete_SmallWall_4m_F",10,0,0],							// Wall
+    ["Land_Concrete_SmallWall_8m_F",10,0,0],							// Wall
+	["Land_PipeWall_concretel_8m_F",10,0,0],							// Wall
+	["Land_ConcreteWall_01_l_pole_F",10,0,0],							// Wall
+	["Land_ConcreteWall_01_l_4m_F",10,0,0],								// Wall
+	["Land_ConcreteWall_01_l_8m_F",10,0,0],								// Wall
+	["Land_ConcreteWall_01_l_gate_F",10,0,0],							// Wall
+	["Land_Bunker_01_blocks_1_F",10,0,0],								// Wall
+	["Land_Bunker_01_blocks_3_F",10,0,0],								// Wall
+	["Land_PillboxWall_01_3m_round_F",10,0,0],							// Wall
+	["Land_PillboxWall_01_6m_round_F",10,0,0],							// Wall
+	["Land_BrickWall_01_l_5m_F",10,0,0],								// Wall
+	["Land_BrickWall_01_l_5m_d_F",10,0,0],								// Wall
+	["Land_BrickWall_01_l_corner_F",10,0,0],							// Wall
+	["Land_BrickWall_01_l_end_F",10,0,0],								// Wall
+	["Land_BrickWall_01_l_pole_F",10,0,0],								// Wall
+	["Land_Mil_WallBig_4m_battered_F",20,0,0],							// Tall wall
+	["Land_Mil_WallBig_corner_battered_F",20,0,0],						// Tall wall
+	["Land_Mil_WallBig_4m_damaged_center_F",20,0,0],					// Tall wall
+	["Land_Mil_WallBig_4m_damaged_left_F",20,0,0],						// Tall wall
+	["Land_Mil_WallBig_Gate_F",20,0,0],									// Tall wall
+    ["Land_CncWall1_F",15,0,0],											// Tall wall
+    ["Land_CncWall4_F",15,0,0],											// Tall wall
+	["Land_A_Castle_Wall1_20",15,0,0],									// Tall wall
+	["Land_A_Castle_Wall1_Corner",15,0,0],								// Tall wall
+	["Land_A_Castle_Wall1_Corner_2",15,0,0],							// Tall wall
+	["Land_A_Castle_Wall1_End",15,0,0],									// Tall wall
+	["Land_A_Castle_Wall1_End_2",15,0,0],								// Tall wall
+	["Land_A_Castle_Wall1_20_Turn",15,0,0],								// Tall wall
+	["Land_A_Castle_Wall2_30",15,0,0],									// Tall wall
+	["Land_A_Castle_Wall2_Corner",15,0,0],								// Tall wall
+	["Land_A_Castle_Wall2_Corner_2",15,0,0],							// Tall wall
+	["Land_A_Castle_Wall2_End",15,0,0],									// Tall wall
+	["Land_A_Castle_Wall2_End_2",15,0,0],								// Tall wall
+	["Land_A_Castle_Bastion",15,0,0],									// Tall wall
+	["Land_BasaltWall_01_8m_F",15,0,0],									// Tall wall
+	["Land_BasaltWall_01_d_right_F",15,0,0],							// Tall wall
+	["Land_Fortress_01_10m_F",15,0,0],									// Tall wall
+	["Land_Fortress_01_5m_F",15,0,0],									// Tall wall
+	["Land_Fortress_01_d_L_F",15,0,0],									// Tall wall
+	["Land_Fortress_01_innerCorner_110_F",15,0,0],						// Tall wall
+	["Land_Fortress_01_innerCorner_70_F",15,0,0],						// Tall wall
+	["Land_Fortress_01_innerCorner_90_F",15,0,0],						// Tall wall
+	["Land_Fortress_01_outterCorner_50_F",15,0,0],						// Tall wall
+	["Land_Fortress_01_outterCorner_80_F",15,0,0],						// Tall wall
+	["Land_Fortress_01_outterCorner_90_F",15,0,0],						// Tall wall
+	["Land_CncShelter_F",10,0,0],										// Structure
+	["Land_BeachBooth_01_F",10,0,0],									// Structure
+	["Land_ConcretePipe_F",10,0,0],										// Structure
+	["Land_A_Castle_Gate",10,0,0],										// Structure
+	["Land_BasaltWall_01_gate_F",10,0,0],								// Structure
+	["Land_Shed_Small_F",10,0,0],										// Structure
+	["Land_Shed_Big_F",10,0,0],											// Structure
+	["Land_WoodenShelter_01_F",10,0,0],									// Structure
+	["Land_MetalShelter_02_F",10,0,0],									// Structure
+	["Land_MetalShelter_01_F",10,0,0],									// Structure
+	["CamoNet_BLUFOR_F",0,0,0],											// Camo netting
+    ["CamoNet_BLUFOR_open_F",0,0,0],									// Camo netting
+    ["CamoNet_BLUFOR_big_F",0,0,0],										// Camo netting
+	["Land_MedicalTent_01_NATO_tropic_generic_outer_F",0,0,0],			// Tent	
+	["Land_MedicalTent_01_NATO_tropic_generic_inner_F",0,0,0],			// Tent	
+	["Land_CanvasCover_01_F",0,0,0],									// Tent
+	["Land_CanvasCover_02_F",0,0,0],									// Tent
+	["Land_ConnectorTent_01_NATO_tropic_closed_F",0,0,0],				// Tent
+	["Land_ConnectorTent_01_NATO_tropic_cross_F",0,0,0],				// Tent
+	["Land_ConnectorTent_01_NATO_tropic_open_F",0,0,0],					// Tent
+	["CampEmpty",0,0,0],												// Tent
+	["CampEast",0,0,0],													// Tent
+	["Land_tent_east",0,0,0],											// Tent
+    ["Land_Cargo_House_V1_F",20,0,0],									// Building
+	["Land_Ind_IlluminantTower",20,0,0],								// Building
+	["Land_Mil_House_EP1",20,0,0],										// Building
+	["Land_Barracks_01_camo_F",20,0,0],									// Building
+	["Land_i_Barracks_V2_F",20,0,0],									// Building
+	["Land_Mil_Barracks",20,0,0],										// Building
+	["Land_Dome_01_big_green_ruins_v1_F",20,0,0],						// Building
+	["Land_Warehouse_03_F",20,0,0],										// Building
+    ["Land_Medevac_house_V1_F",20,0,0],									// Building
+    ["Land_Medevac_HQ_V1_F",20,0,0],									// Building
+	["Land_Hangar_2",20,0,0],											// Vehicle storage
+	["Land_Airport_01_hangar_F",20,0,0],								// Vehicle storage
+	["Land_Hangar_F",20,0,0],											// Vehicle storage
+	["Land_GarageShelter_01_F",20,0,0],									// Vehicle storage
+	["Land_PillboxBunker_01_big_F",20,0,0],								// Bunker
+	["Land_PillboxBunker_01_hex_F",20,0,0],								// Bunker
+	["Land_PillboxBunker_01_rectangle_F",20,0,0],						// Bunker
+	["Land_Bunker_01_small_F",20,0,0],									// Bunker
+	["Land_Bunker_01_big_F",20,0,0],									// Bunker
+	["Land_Misc_deerstand",30,0,0],										// Tower
+	["Land_dp_smallTank_F",30,0,0],										// Tower
+    ["Land_dp_bigTank_F",30,0,0],										// Tower
+	["Land_Cargo_Tower_V1_F",30,0,0],									// Tower
+	["Land_Airport_Tower_F",30,0,0],									// Tower
+	["Land_LifeguardTower_01_F",30,0,0],								// Tower
+	["Land_Castle_01_tower_F",30,0,0],									// Tower
+	["Land_A_Castle_Bergfrit",30,0,0],									// Tower
+	["Land_A_Castle_Donjon",30,0,0],									// Tower
+	["Land_Cargo_Patrol_V1_F",30,0,0],									// Tower
+	["CargoPlaftorm_01_green_F",30,0,0],								// Tower
+	["Land_Mil_ControlTower",30,0,0],									// Tower
+	["Land_ControlTower_01_F",30,0,0],									// Tower
+	["Land_Airport_01_controlTower_F",30,0,0],							// Tower
+	["Land_Pallet_F",0,0,0],											// Bridge
+	["Land_WorkStand_F",0,0,0],											// Bridge
+	["Land_prebehlavka",0,0,0],											// Bridge
+	["Land_Climbing_Obstacle",0,0,0],									// Bridge
+	["Land_A_Castle_Stairs_A",0,0,0],									// Stairs
+	["Land_Tribune_F",0,0,0],											// Stairs
+	["Land_FireEscape_01_short_F",0,0,0],								// Stairs
+	["Land_FireEscape_01_tall_F",0,0,0],								// Stairs
+	["Land_WoodenRamp",0,0,0],											// Ramp
+	["ConcreteRamp",0,0,0],												// Ramp
+	["Land_ConcreteRamp",0,0,0],										// Ramp
+	["Land_Pier_Box_F",10,0,0],											// Platform
+	["Land_Podesta_1_cube",10,0,0],										// Platform
+	["Land_Podesta_1_cube_long",10,0,0],								// Platform
+	["Land_Podesta_1_stairs4",10,0,0],									// Platform
+	["Land_ConcreteBlock",10,0,0],										// Platform
+	["Land_Podesta_10",10,0,0],											// Platform
+	["Land_Podesta_5",10,0,0],											// Platform
+	["Land_BC_Court_F",10,0,0],											// Platform
+	["Land_AirstripPlatform_01_F",10,0,0],								// Raised platform
+	["Land_MedicalTent_01_floor_light_F",0,0,0],						// Floor
+	["Land_MedicalTent_01_floor_dark_F",0,0,0],							// Floor
+	["Land_GardenPavement_01_F",0,0,0],									// Floor
+	["Land_GardenPavement_02_F",0,0,0],									// Floor
+	["Land_Sidewalk_01_4m_F",0,0,0],									// Floor
+	["Land_Sidewalk_01_8m_F",0,0,0],									// Floor
+	["Land_Sidewalk_01_corner_F",0,0,0],								// Floor
+    ["Land_CampingChair_V1_F",0,0,0],									// Clutter
+    ["Land_CampingChair_V2_F",0,0,0],									// Clutter
+    ["Land_CampingTable_F",0,0,0],										// Clutter
+    ["MapBoard_altis_F",0,0,0],											// Clutter
+    ["MapBoard_stratis_F",0,0,0],										// Clutter
+    ["MapBoard_seismic_F",0,0,0],										// Clutter
+    ["Land_Pallet_MilBoxes_F",0,0,0],									// Clutter
+    ["Land_PaperBox_open_empty_F",0,0,0],								// Clutter
+    ["Land_PaperBox_open_full_F",0,0,0],								// Clutter
+    ["Land_PaperBox_closed_F",0,0,0],									// Clutter
+    ["Land_DieselGroundPowerUnit_01_F",0,0,0],							// Clutter
+    ["Land_ToolTrolley_02_F",0,0,0],									// Clutter
+    ["Land_WeldingTrolley_01_F",0,0,0],									// Clutter
+    ["Land_Workbench_01_F",0,0,0],										// Clutter
+    ["Land_GasTank_01_blue_F",0,0,0],									// Clutter
+    ["Land_GasTank_01_khaki_F",0,0,0],									// Clutter
+    ["Land_GasTank_01_yellow_F",0,0,0],									// Clutter
+    ["Land_GasTank_02_F",0,0,0],										// Clutter
+	["Land_Grave_dirt_F",0,0,0],										// Clutter
+	["Land_Grave_forest_F",0,0,0],										// Clutter
+	["Land_TreeBin_F",0,0,0],											// Clutter
+	["Land_StallWater_F",0,0,0],										// Clutter
+	["Land_WheelCart_F",0,0,0],											// Clutter
+	["Land_BC_Basket_F",0,0,0],											// Clutter
+	["RoadBarrier_long",0,0,0],											// Clutter
+	["RoadBarrier_light",0,0,0],										// Clutter
+	["Body",0,0,0],														// Clutter
+	["GraveCrossHelmet_EP1",0,0,0],										// Clutter
+    ["Land_ClutterCutter_large_F",0,0,0]								// Grass remover
 ];
 
 support_vehicles = [
@@ -335,9 +683,6 @@ support_vehicles = [
     ["USAF_missileCart_Mk82",50,150,0],                                 // Missile Cart (Mk82)
     ["CUP_B_TowingTractor_NATO",50,0,25],                               // Towing Tractor
     ["B_APC_Tracked_01_CRV_F",500,250,350],                             // CRV-6e Bobcat
-    ["B_Truck_01_Repair_F",325,0,75],                                   // HEMTT Repair
-    ["B_Truck_01_fuel_F",125,0,275],                                    // HEMTT Fuel
-    ["B_Truck_01_ammo_F",125,200,75],                                   // HEMTT Ammo
     ["rhsusf_M977A4_REPAIR_BKIT_usarmy_wd",325,0,75],                   // M977A4 Repair
     ["rhsusf_M978A4_BKIT_usarmy_wd",125,0,275],                         // M978A4 Fuel
     ["rhsusf_M977A4_AMMO_BKIT_usarmy_wd",125,200,75],                   // M977A4 Ammo
@@ -354,82 +699,82 @@ support_vehicles = [
 
 // Light infantry squad.
 blufor_squad_inf_light = [
-    "B_Soldier_TL_F",
-    "B_Soldier_F",
-    "B_Soldier_F",
-    "B_Soldier_LAT_F",
-    "B_Soldier_GL_F",
-    "B_soldier_AR_F",
-    "B_soldier_AR_F",
-    "B_soldier_M_F",
-    "B_medic_F",
-    "B_engineer_F"
+    "rhsusf_army_ocp_teamleader",
+    "rhsusf_army_ocp_rifleman",
+    "rhsusf_army_ocp_rifleman",
+    "rhsusf_army_ocp_riflemanat",
+    "rhsusf_army_ocp_grenadier",
+    "rhsusf_army_ocp_autorifleman",
+    "rhsusf_army_ocp_autorifleman",
+    "rhsusf_army_ocp_marksman",
+    "rhsusf_army_ocp_medic",
+    "rhsusf_army_ocp_engineer"
 ];
 
 // Heavy infantry squad.
 blufor_squad_inf = [
-    "B_Soldier_TL_F",
-    "B_Soldier_LAT_F",
-    "B_Soldier_LAT_F",
-    "B_Soldier_GL_F",
-    "B_soldier_AR_F",
-    "B_soldier_AR_F",
-    "B_HeavyGunner_F",
-    "B_Sharpshooter_F",
-    "B_medic_F",
-    "B_engineer_F"
+    "rhsusf_army_ocp_teamleader",
+    "rhsusf_army_ocp_riflemanat",
+    "rhsusf_army_ocp_riflemanat",
+    "rhsusf_army_ocp_grenadier",
+    "rhsusf_army_ocp_autorifleman",
+    "rhsusf_army_ocp_autorifleman",
+    "rhsusf_army_ocp_machinegunner",
+    "rhsusf_army_ocp_marksman",
+    "rhsusf_army_ocp_medic",
+    "rhsusf_army_ocp_engineer"
 ];
 
 // AT specialists squad.
 blufor_squad_at = [
-    "B_Soldier_TL_F",
-    "B_Soldier_F",
-    "B_Soldier_F",
-    "B_soldier_AT_F",
-    "B_soldier_AT_F",
-    "B_soldier_AT_F",
-    "B_medic_F",
-    "B_soldier_F"
+    "rhsusf_army_ocp_teamleader",
+    "rhsusf_army_ocp_rifleman",
+    "rhsusf_army_ocp_rifleman",
+    "rhsusf_army_ocp_javelin",
+    "rhsusf_army_ocp_javelin",
+    "rhsusf_army_ocp_javelin",
+    "rhsusf_army_ocp_medic",
+    "rhsusf_army_ocp_rifleman"
 ];
 
 // AA specialists squad.
 blufor_squad_aa = [
-    "B_Soldier_TL_F",
-    "B_Soldier_F",
-    "B_Soldier_F",
-    "B_soldier_AA_F",
-    "B_soldier_AA_F",
-    "B_soldier_AA_F",
-    "B_medic_F",
-    "B_soldier_F"
+    "rhsusf_army_ocp_teamleader",
+    "rhsusf_army_ocp_rifleman",
+    "rhsusf_army_ocp_rifleman",
+    "rhsusf_army_ocp_aa",
+    "rhsusf_army_ocp_aa",
+    "rhsusf_army_ocp_aa",
+    "rhsusf_army_ocp_medic",
+    "rhsusf_army_ocp_rifleman"
 ];
 
 // Force recon squad.
 blufor_squad_recon = [
-    "B_recon_TL_F",
-    "B_recon_F",
-    "B_recon_F",
-    "B_recon_LAT_F",
-    "B_recon_M_F",
-    "B_recon_M_F",
-    "B_Recon_Sharpshooter_F",
-    "B_Recon_Sharpshooter_F",
-    "B_recon_medic_F",
-    "B_recon_exp_F"
+    "rhsusf_usmc_recon_marpat_wd_teamleader",
+    "rhsusf_usmc_recon_marpat_wd_rifleman",
+    "rhsusf_usmc_recon_marpat_wd_rifleman",
+    "rhsusf_usmc_recon_marpat_wd_rifleman_at",
+    "rhsusf_usmc_recon_marpat_wd_autorifleman",
+    "rhsusf_usmc_recon_marpat_wd_machinegunner",
+    "rhsusf_usmc_recon_marpat_wd_marksman",
+    "rhsusf_usmc_recon_marpat_wd_sniper_M107",
+    "rhsusf_army_ucp_medic",
+    "rhsusf_army_ucp_engineer"
 ];
 
 // Paratroopers squad (The units of this squad will automatically get parachutes on build)
 blufor_squad_para = [
-    "B_soldier_PG_F",
-    "B_soldier_PG_F",
-    "B_soldier_PG_F",
-    "B_soldier_PG_F",
-    "B_soldier_PG_F",
-    "B_soldier_PG_F",
-    "B_soldier_PG_F",
-    "B_soldier_PG_F",
-    "B_soldier_PG_F",
-    "B_soldier_PG_F"
+    "rhsusf_army_ocp_rifleman_101st",
+    "rhsusf_army_ocp_rifleman_101st",
+    "rhsusf_army_ocp_rifleman_101st",
+    "rhsusf_army_ocp_rifleman_101st",
+    "rhsusf_army_ocp_rifleman_101st",
+    "rhsusf_army_ocp_rifleman_101st",
+    "rhsusf_army_ocp_rifleman_101st",
+    "rhsusf_army_ocp_rifleman_101st",
+    "rhsusf_army_ocp_rifleman_101st",
+    "rhsusf_army_ocp_rifleman_101st"
 ];
 
 /*
@@ -440,20 +785,12 @@ blufor_squad_para = [
 elite_vehicles = [
     "rhsusf_mkvsoc",                                                    // Mk.V SOCOM
     "rhsusf_m1a1aim_tuski_wd",                                          // M1A1SA (Tusk I)
-    "B_MBT_01_TUSK_F",                                                  // M2A4 Slammer UP
     "rhsusf_m1a2sep1tuskiiwd_usarmy",                                   // M1A2SEPv1 (Tusk II)
-    "BWA3_Leopard2_Fleck",                                              // MBT Leopard 2A6M
-    "B_MBT_01_arty_F",                                                  // M4 Scorcher
     "rhsusf_m109_usarmy",                                               // M109A6
-    "B_MBT_01_mlrs_F",                                                  // M5 Sandstorm MLRS
-    "B_Heli_Attack_01_dynamicLoadout_F",                                // AH-99 Blackfoot
     "RHS_AH64D_wd",                                                     // AH-64D (Multi-Role)
-    "BWA3_Tiger_RMK_Universal",                                         // UH Tiger RMK (Universal)
     "B_UAV_02_dynamicLoadout_F",                                        // MQ-4A Greyhawk
     "B_T_UAV_03_dynamicLoadout_F",                                      // MQ-12 Falcon
     "B_UAV_05_F",                                                       // UCAV Sentinel
-    "B_Plane_CAS_01_dynamicLoadout_F",                                  // A-164 Wipeout (CAS)
-    "I_Plane_Fighter_04_F",                                             // A-149 Gryphon
     "RHS_A10",                                                          // A-10A (CAS)
     "USAF_MQ9",                                                         // MQ-9 Reaper
     "USAF_A10",                                                         // A-10C Thunderbolt II

@@ -1,41 +1,43 @@
 /*
     Needed Mods:
-    - None
+    - RHSAFRF
+    - CUP Weapons
+    - CUP Vehicles
 
     Optional Mods:
     - None
 */
 
 // Enemy infantry classes
-opfor_officer = "O_officer_F";                                          // Officer
-opfor_squad_leader = "O_Soldier_SL_F";                                  // Squad Leader
-opfor_team_leader = "O_Soldier_TL_F";                                   // Team Leader
-opfor_sentry = "O_Soldier_lite_F";                                      // Rifleman (Lite)
-opfor_rifleman = "O_Soldier_F";                                         // Rifleman
-opfor_rpg = "O_Soldier_LAT_F";                                          // Rifleman (LAT)
-opfor_grenadier = "O_Soldier_GL_F";                                     // Grenadier
-opfor_machinegunner = "O_Soldier_AR_F";                                 // Autorifleman
-opfor_heavygunner = "O_HeavyGunner_F";                                  // Heavy Gunner
-opfor_marksman = "O_soldier_M_F";                                       // Marksman
-opfor_sharpshooter = "O_Sharpshooter_F";                                // Sharpshooter
-opfor_sniper = "O_sniper_F";                                            // Sniper
-opfor_at = "O_Soldier_AT_F";                                            // AT Specialist
-opfor_aa = "O_Soldier_AA_F";                                            // AA Specialist
-opfor_medic = "O_medic_F";                                              // Combat Life Saver
-opfor_engineer = "O_engineer_F";                                        // Engineer
-opfor_paratrooper = "O_soldier_PG_F";                                   // Paratrooper
+opfor_officer = "rhs_msv_emr_officer";                                  // Officer
+opfor_squad_leader = "rhs_msv_emr_sergeant";                            // Squad Leader
+opfor_team_leader = "rhs_msv_emr_efreitor";                             // Team Leader
+opfor_sentry = "rhs_msv_emr_rifleman";                                  // Rifleman (Lite)
+opfor_rifleman = "rhs_msv_emr_rifleman";                                // Rifleman
+opfor_rpg = "rhs_msv_emr_LAT";                                          // Rifleman (LAT)
+opfor_grenadier = "rhs_msv_emr_grenadier";                              // Grenadier
+opfor_machinegunner = "rhs_msv_emr_arifleman";                          // Autorifleman
+opfor_heavygunner = "rhs_msv_emr_machinegunner";                        // Heavy Gunner
+opfor_marksman = "rhs_msv_emr_marksman";                                // Marksman
+opfor_sharpshooter = "rhs_msv_emr_marksman";                            // Sharpshooter
+opfor_sniper = "rhs_msv_emr_marksman";                                  // Sniper
+opfor_at = "rhs_msv_emr_at";                                            // AT Specialist
+opfor_aa = "rhs_msv_emr_aa";                                            // AA Specialist
+opfor_medic = "rhs_msv_emr_medic";                                      // Combat Life Saver
+opfor_engineer = "rhs_msv_emr_engineer";                                // Engineer
+opfor_paratrooper = "rhs_msv_emr_RShG2";                                // Paratrooper
 
 // Enemy vehicles used by secondary objectives.
-opfor_mrap = "O_MRAP_02_F";                                             // Ifrit
-opfor_mrap_armed = "O_MRAP_02_hmg_F";                                   // Ifrit (HMG)
-opfor_transport_helo = "O_Heli_Transport_04_bench_F";                   // Mi-290 Taru (Bench)
-opfor_transport_truck = "O_Truck_03_covered_F";                         // Tempest Transport (Covered)
-opfor_ammobox_transport = "O_Truck_03_transport_F";                     // Tempest Transport (Open) -> Has to be able to transport resource crates!
-opfor_fuel_truck = "O_Truck_03_fuel_F";                                 // Tempest Fuel
-opfor_ammo_truck = "O_Truck_03_ammo_F";                                 // Tempest Ammo
+opfor_mrap = "rhs_tigr_msv";                                            // GAZ-233011
+opfor_mrap_armed = "rhs_tigr_sts_msv";                                  // GAZ-233014 (Armed)
+opfor_transport_helo = "RHS_Mi8mt_Cargo_vvsc";                          // Mi-8MT (Cargo)
+opfor_transport_truck = "RHS_Ural_MSV_01";                              // Ural-4320 Transport (Covered)
+opfor_ammobox_transport = "RHS_Ural_Open_MSV_01";                       // Ural-4320 Transport (Open) -> Has to be able to transport resource crates!
+opfor_fuel_truck = "RHS_Ural_Fuel_MSV_01";                              // Ural-4320 Fuel
+opfor_ammo_truck = "rhs_gaz66_ammo_msv";                                // GAZ-66 Ammo
 opfor_fuel_container = "Land_Pod_Heli_Transport_04_fuel_F";             // Taru Fuel Pod
 opfor_ammo_container = "Land_Pod_Heli_Transport_04_ammo_F";             // Taru Ammo Pod
-opfor_flag = "Flag_CSAT_F";                                             // Flag
+opfor_flag = "rhs_Flag_Russia_F";                                       // Flag
 
 /* Adding a value to these arrays below will add them to a one out of however many in the array, random pick chance.
 Therefore, adding the same value twice or three times means they are more likely to be chosen more often. */
@@ -43,100 +45,550 @@ Therefore, adding the same value twice or three times means they are more likely
 /* Militia infantry. Lightweight soldier classnames the game will pick from randomly as sector defenders.
 Think of them like garrison or military police forces, which are more meant to control the local population instead of fighting enemy armies. */
 militia_squad = [
-    "O_soldierU_F",                                                     // Rifleman (Lite)
-    "O_soldierU_F",                                                     // Rifleman (Lite)
-    "O_soldierU_F",                                                     // Rifleman
-    "O_soldierU_F",                                                     // Rifleman
-    "O_soldierU_LAT_F",                                                 // Rifleman (AT)
-    "O_soldierU_AR_F",                                                  // Autorifleman
-    "O_soldierU_M_F",                                                   // Marksman
-    "O_soldierU_medic_F",                                               // Medic
-    "O_engineer_U_F"                                                    // Engineer
+	"rhs_msv_emr_rifleman",                                             // Rifleman
+	"rhs_msv_emr_rifleman",                                             // Rifleman
+	"rhs_msv_emr_rifleman",                                             // Rifleman
+	"rhs_msv_emr_LAT",                                                  // Rifleman (AT)
+	"rhs_msv_emr_arifleman",                                            // Autorifleman
+	"rhs_msv_emr_marksman",                                             // Marksman
+	"rhs_msv_emr_medic",                                                // Medic
+	"rhs_msv_emr_engineer"                                              // Engineer
 ];
 
 // Militia vehicles. Lightweight vehicle classnames the game will pick from randomly as sector defenders. Can also be empty for only infantry milita.
 militia_vehicles = [
-    "O_LSV_02_armed_F"                                                  // Qilin (armed)
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU"
 ];
 
-// All enemy vehicles that can spawn as sector defenders and patrols at high enemy combat readiness (aggression levels).
+// Militia vehicles. Lightweight vehicle classnames the game will pick from randomly as sector defenders. Can also be empty for only infantry milita.
 opfor_vehicles = [
-    "O_MRAP_02_hmg_F",                                                  // Ifrit (HMG)
-    "O_MRAP_02_hmg_F",                                                  // Ifrit (GMG)
-    "O_MRAP_02_gmg_F",                                                  // Ifrit (GMG)
-    "O_LSV_02_AT_F",                                                    // Qilin (AT)
-    "O_APC_Tracked_02_cannon_F",                                        // BTR-K Kamysh
-    "O_APC_Tracked_02_cannon_F",                                        // BTR-K Kamysh
-    "O_APC_Tracked_02_AA_F",                                            // ZSU-39 Tigris
-    "O_APC_Tracked_02_AA_F",                                            // ZSU-39 Tigris
-    "O_MBT_02_cannon_F",                                                // T-100 Varsuk
-    "O_MBT_02_cannon_F",                                                // T-100 Varsuk
-    "O_MBT_04_cannon_F",                                                // T-140 Angara
-    "O_MBT_04_command_F"                                                // T-140K Angara
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhsgref_BRDM2_msv",
+	"rhsgref_BRDM2_ATGM_msv",
+	"rhsgref_BRDM2UM_msv",
+	"rhsgref_BRDM2_HQ_msv",
+	"rhs_bmp1_msv",
+	"rhs_bmp1d_msv",
+	"rhs_bmp1k_msv",
+	"rhs_bmp1p_msv",
+	"rhs_bmp2e_msv",
+	"rhs_bmp2_msv",
+	"rhs_bmp2d_msv",
+	"rhs_bmp2k_msv",
+	"rhs_brm1k_msv",
+	"rhs_Ob_681_2",
+	"rhs_prp3_msv",
+	"rhs_bmp3_late_msv",
+	"rhs_bmp3_msv",
+	"rhs_bmp3m_msv",
+	"rhs_bmp3mera_msv",
+	"rhs_zsu234_aa",
+	"rhs_btr60_msv",
+	"rhs_btr70_msv",
+	"rhs_btr80_msv",
+	"rhs_btr80a_msv",
+	"rhsgref_BRDM2_msv",
+	"rhsgref_BRDM2_ATGM_msv",
+	"rhsgref_BRDM2UM_msv",
+	"rhsgref_BRDM2_HQ_msv",
+	"rhs_bmp1_msv",
+	"rhs_bmp1d_msv",
+	"rhs_bmp1k_msv",
+	"rhs_bmp1p_msv",
+	"rhs_bmp2e_msv",
+	"rhs_bmp2_msv",
+	"rhs_bmp2d_msv",
+	"rhs_bmp2k_msv",
+	"rhs_brm1k_msv",
+	"rhs_Ob_681_2",
+	"rhs_prp3_msv",
+	"rhs_bmp3_late_msv",
+	"rhs_bmp3_msv",
+	"rhs_bmp3m_msv",
+	"rhs_bmp3mera_msv",
+	"rhs_zsu234_aa",
+	"rhs_gaz66_zu23_msv",
+	"CUP_O_UAZ_AA_RU",
+	"RHS_Ural_Zu23_MSV_01",
+	"rhs_btr60_msv",
+	"rhs_btr70_msv",
+	"rhs_btr80_msv",
+	"rhs_btr80a_msv",
+	"CUP_O_T72_RU",
+	"rhs_t72ba_tv",
+	"rhs_t72bb_tv",
+	"rhs_t72bc_tv",
+	"rhs_t72bd_tv",
+	"rhs_t72be_tv",
+	"rhs_t80",
+	"rhs_t80a",
+	"rhs_t80b",
+	"rhs_t80bk",
+	"rhs_t80bvk",
+	"rhs_t80u",
+	"rhs_t80u45m",
+	"rhs_t80ue1",
+	"rhs_t80uk",
+	"rhs_t80um",
+	"rhs_t90_tv",
+	"rhs_t90a_tv",
+	"rhs_t90am_tv",
+	"rhs_t90saa_tv",
+	"rhs_t90sab_tv",
+	"rhs_t90sm_tv",
+	"rhs_sprut_vdv"
 ];
 
 // All enemy vehicles that can spawn as sector defenders and patrols but at a lower enemy combat readiness (aggression levels).
 opfor_vehicles_low_intensity = [
-    "O_MRAP_02_hmg_F",                                                  // Ifrit (HMG)
-    "O_MRAP_02_hmg_F",                                                  // Ifrit (HMG)
-    "O_LSV_02_AT_F",                                                    // Qilin (AT)
-    "O_APC_Wheeled_02_rcws_F",                                          // MSE-3 Marid
-    "O_APC_Tracked_02_cannon_F"                                         // BTR-K Kamysh
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhsgref_BRDM2_msv",
+	"rhsgref_BRDM2_ATGM_msv",
+	"rhsgref_BRDM2UM_msv",
+	"rhsgref_BRDM2_HQ_msv",
+	"rhs_bmp1_msv",
+	"rhs_bmp1d_msv",
+	"rhs_bmp1k_msv",
+	"rhs_bmp1p_msv",
+	"rhs_bmp2e_msv",
+	"rhs_bmp2_msv",
+	"rhs_bmp2d_msv",
+	"rhs_bmp2k_msv",
+	"rhs_brm1k_msv",
+	"rhs_Ob_681_2",
+	"rhs_prp3_msv",
+	"rhs_bmp3_late_msv",
+	"rhs_bmp3_msv",
+	"rhs_bmp3m_msv",
+	"rhs_bmp3mera_msv",
+	"rhs_zsu234_aa",
+	"rhs_btr60_msv",
+	"rhs_btr70_msv",
+	"rhs_btr80_msv",
+	"rhs_btr80a_msv",
+	"rhsgref_BRDM2_msv",
+	"rhsgref_BRDM2_ATGM_msv",
+	"rhsgref_BRDM2UM_msv",
+	"rhsgref_BRDM2_HQ_msv",
+	"rhs_bmp1_msv",
+	"rhs_bmp1d_msv",
+	"rhs_bmp1k_msv",
+	"rhs_bmp1p_msv",
+	"rhs_bmp2e_msv",
+	"rhs_bmp2_msv",
+	"rhs_bmp2d_msv",
+	"rhs_bmp2k_msv",
+	"rhs_brm1k_msv",
+	"rhs_Ob_681_2",
+	"rhs_prp3_msv",
+	"rhs_bmp3_late_msv",
+	"rhs_bmp3_msv",
+	"rhs_bmp3m_msv",
+	"rhs_bmp3mera_msv",
+	"rhs_zsu234_aa",
+	"rhs_gaz66_zu23_msv",
+	"RHS_Ural_Zu23_MSV_01",
+	"CUP_O_UAZ_AA_RU",
+	"rhs_btr60_msv",
+	"rhs_btr70_msv",
+	"rhs_btr80_msv",
+	"rhs_btr80a_msv"
 ];
 
 // All enemy vehicles that can spawn as battlegroups, either assaulting or as reinforcements, at high enemy combat readiness (aggression levels).
 opfor_battlegroup_vehicles = [
-    "O_MRAP_02_hmg_F",                                                  // Ifrit (HMG)
-    "O_MRAP_02_gmg_F",                                                  // Ifrit (GMG)
-    "O_MRAP_02_gmg_F",                                                  // Ifrit (GMG)
-    "O_LSV_02_AT_F",                                                    // Qilin (AT)
-    "O_Truck_03_transport_F",                                           // Tempest Transport
-    "O_Truck_03_covered_F",                                             // Tempest Transport (Covered)
-    "O_APC_Tracked_02_cannon_F",                                        // BTR-K Kamysh
-    "O_APC_Tracked_02_cannon_F",                                        // BTR-K Kamysh
-    "O_APC_Tracked_02_AA_F",                                            // ZSU-39 Tigris
-    "O_APC_Tracked_02_AA_F",                                            // ZSU-39 Tigris
-    "O_MBT_02_cannon_F",                                                // T-100 Varsuk
-    "O_MBT_02_cannon_F",                                                // T-100 Varsuk
-    "O_MBT_04_cannon_F",                                                // T-140 Angara
-    "O_MBT_04_command_F",                                               // T-140K Angara
-    "O_Heli_Light_02_dynamicLoadout_F",                                 // Po-30 Orca (Armed)
-    "O_Heli_Light_02_dynamicLoadout_F",                                 // Po-30 Orca (Armed)
-    "O_Heli_Transport_04_bench_F",                                      // Mi-290 Taru (Bench)
-    "O_Heli_Attack_02_dynamicLoadout_F"                                 // Mi-48 Kajman
+	"rhs_gaz66_msv",
+	"rhs_gaz66o_msv",
+	"rhs_kamaz5350_msv",
+	"rhs_kamaz5350_open_msv",
+	"rhs_kraz255b1_cargo_open_msv",
+	"RHS_Ural_MSV_01",
+	"RHS_Ural_Open_MSV_01",
+	"rhs_zil131_msv",
+	"rhs_zil131_open_msv",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhsgref_BRDM2_msv",
+	"rhsgref_BRDM2_ATGM_msv",
+	"rhsgref_BRDM2UM_msv",
+	"rhsgref_BRDM2_HQ_msv",
+	"rhs_bmp1_msv",
+	"rhs_bmp1d_msv",
+	"rhs_bmp1k_msv",
+	"rhs_bmp1p_msv",
+	"rhs_bmp2e_msv",
+	"rhs_bmp2_msv",
+	"rhs_bmp2d_msv",
+	"rhs_bmp2k_msv",
+	"rhs_brm1k_msv",
+	"rhs_Ob_681_2",
+	"rhs_prp3_msv",
+	"rhs_bmp3_late_msv",
+	"rhs_bmp3_msv",
+	"rhs_bmp3m_msv",
+	"rhs_bmp3mera_msv",
+	"rhs_zsu234_aa",
+	"rhs_btr60_msv",
+	"rhs_btr70_msv",
+	"rhs_btr80_msv",
+	"rhs_btr80a_msv",
+	"rhsgref_BRDM2_msv",
+	"rhsgref_BRDM2_ATGM_msv",
+	"rhsgref_BRDM2UM_msv",
+	"rhsgref_BRDM2_HQ_msv",
+	"rhs_bmp1_msv",
+	"rhs_bmp1d_msv",
+	"rhs_bmp1k_msv",
+	"rhs_bmp1p_msv",
+	"rhs_bmp2e_msv",
+	"rhs_bmp2_msv",
+	"rhs_bmp2d_msv",
+	"rhs_bmp2k_msv",
+	"rhs_brm1k_msv",
+	"rhs_Ob_681_2",
+	"rhs_prp3_msv",
+	"rhs_bmp3_late_msv",
+	"rhs_bmp3_msv",
+	"rhs_bmp3m_msv",
+	"rhs_bmp3mera_msv",
+	"rhs_zsu234_aa",
+	"rhs_gaz66_zu23_msv",
+	"RHS_Ural_Zu23_MSV_01",
+	"CUP_O_UAZ_AA_RU",
+	"rhs_btr60_msv",
+	"rhs_btr70_msv",
+	"rhs_btr80_msv",
+	"rhs_btr80a_msv",
+	"CUP_O_T72_RU",
+	"rhs_t72ba_tv",
+	"rhs_t72bb_tv",
+	"rhs_t72bc_tv",
+	"rhs_t72bd_tv",
+	"rhs_t72be_tv",
+	"rhs_t80",
+	"rhs_t80a",
+	"rhs_t80b",
+	"rhs_t80bk",
+	"rhs_t80bvk",
+	"rhs_t80u",
+	"rhs_t80u45m",
+	"rhs_t80ue1",
+	"rhs_t80uk",
+	"rhs_t80um",
+	"rhs_t90_tv",
+	"rhs_t90a_tv",
+	"rhs_t90am_tv",
+	"rhs_t90saa_tv",
+	"rhs_t90sab_tv",
+	"rhs_t90sm_tv",
+	"rhs_sprut_vdv",
+	"rhs_t15_tv",
+	"rhs_t14_tv",
+	"RHS_Ka52_vvsc",
+	"RHS_Mi24P_vvsc",
+	"RHS_Mi24V_vvsc",
+	"RHS_Mi24Vt_vvsc",
+	"rhs_mi28n_vvsc",
+	"RHS_Mi8AMTSh_vvsc",
+	"RHS_Mi8MTV3_heavy_vvsc",
+	"RHS_Mi8mt_Cargo_vvsc",
+	"RHS_Su25SM_vvs",
+	"rhs_mig29s_vvs",
+	"rhs_mig29sm_vvs",
+	"RHS_Su25SM_vvs",
+	"RHS_T50_vvs_generic",
+	"RHS_T50_vvs_blueonblue",
+	"CUP_O_SU34_RU"
 ];
 
 // All enemy vehicles that can spawn as battlegroups, either assaulting or as reinforcements, at lower enemy combat readiness (aggression levels).
 opfor_battlegroup_vehicles_low_intensity = [
-    "O_MRAP_02_hmg_F",                                                  // Ifrit (HMG)
-    "O_MRAP_02_hmg_F",                                                  // Ifrit (HMG)
-    "O_Truck_03_transport_F",                                           // Tempest Transport
-    "O_APC_Wheeled_02_rcws_F",                                          // MSE-3 Marid
-    "O_APC_Tracked_02_cannon_F",                                        // BTR-K Kamysh
-    "O_APC_Tracked_02_AA_F",                                            // ZSU-39 Tigris
-    "O_Heli_Light_02_dynamicLoadout_F",                                 // Po-30 Orca (Armed)
-    "O_Heli_Transport_04_bench_F"                                       // Mi-290 Taru (Bench)
+	"rhs_gaz66_msv",
+	"rhs_gaz66o_msv",
+	"rhs_kamaz5350_msv",
+	"rhs_kamaz5350_open_msv",
+	"rhs_kraz255b1_cargo_open_msv",
+	"RHS_Ural_MSV_01",
+	"RHS_Ural_Open_MSV_01",
+	"rhs_zil131_msv",
+	"rhs_zil131_open_msv",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhs_tigr_sts_msv",
+	"CUP_O_UAZ_AGS30_RU",
+	"CUP_O_UAZ_MG_RU",
+	"CUP_O_UAZ_Open_RU",
+	"CUP_O_UAZ_METIS_RU",
+	"CUP_O_UAZ_SPG9_RU",
+	"rhsgref_BRDM2_msv",
+	"rhsgref_BRDM2_ATGM_msv",
+	"rhsgref_BRDM2UM_msv",
+	"rhsgref_BRDM2_HQ_msv",
+	"rhs_bmp1_msv",
+	"rhs_bmp1d_msv",
+	"rhs_bmp1k_msv",
+	"rhs_bmp1p_msv",
+	"rhs_bmp2e_msv",
+	"rhs_bmp2_msv",
+	"rhs_bmp2d_msv",
+	"rhs_bmp2k_msv",
+	"rhs_brm1k_msv",
+	"rhs_Ob_681_2",
+	"rhs_prp3_msv",
+	"rhs_bmp3_late_msv",
+	"rhs_bmp3_msv",
+	"rhs_bmp3m_msv",
+	"rhs_bmp3mera_msv",
+	"rhs_zsu234_aa",
+	"rhs_gaz66_zu23_msv",
+	"RHS_Ural_Zu23_MSV_01",
+	"CUP_O_UAZ_AA_RU",
+	"rhs_btr60_msv",
+	"rhs_btr70_msv",
+	"rhs_btr80_msv",
+	"rhs_btr80a_msv",
+	"rhsgref_BRDM2_msv",
+	"rhsgref_BRDM2_ATGM_msv",
+	"rhsgref_BRDM2UM_msv",
+	"rhsgref_BRDM2_HQ_msv",
+	"rhs_bmp1_msv",
+	"rhs_bmp1d_msv",
+	"rhs_bmp1k_msv",
+	"rhs_bmp1p_msv",
+	"rhs_bmp2e_msv",
+	"rhs_bmp2_msv",
+	"rhs_bmp2d_msv",
+	"rhs_bmp2k_msv",
+	"rhs_brm1k_msv",
+	"rhs_Ob_681_2",
+	"rhs_prp3_msv",
+	"rhs_bmp3_late_msv",
+	"rhs_bmp3_msv",
+	"rhs_bmp3m_msv",
+	"rhs_bmp3mera_msv",
+	"rhs_zsu234_aa",
+	"rhs_btr60_msv",
+	"rhs_btr70_msv",
+	"rhs_btr80_msv",
+	"rhs_btr80a_msv",
+	"RHS_Ka52_vvsc",
+	"RHS_Mi24P_vvsc",
+	"RHS_Mi24V_vvsc",
+	"RHS_Mi24Vt_vvsc",
+	"rhs_mi28n_vvsc",
+	"RHS_Mi8AMTSh_vvsc",
+	"RHS_Mi8MTV3_heavy_vvsc",
+	"RHS_Mi8mt_Cargo_vvsc",
+	"RHS_Su25SM_vvs"
 ];
 
 /* All vehicles that spawn within battlegroups (see the above 2 arrays) and also hold 8 soldiers as passengers.
 If something in this array can't hold all 8 soldiers then buggy behaviours may occur.    */
 opfor_troup_transports = [
-    "O_Truck_03_transport_F",                                           // Tempest Transport
-    "O_Truck_03_covered_F",                                             // Tempest Transport (Covered)
-    "O_APC_Wheeled_02_rcws_F",                                          // MSE-3 Marid
-    "O_Heli_Transport_04_bench_F",                                      // Mi-290 Taru (Bench)
-    "O_Heli_Light_02_dynamicLoadout_F"                                  // Po-30 Orca (Armed)
+	"rhs_gaz66_msv",
+	"rhs_gaz66o_msv",
+	"rhs_kamaz5350_msv",
+	"rhs_kamaz5350_open_msv",
+	"rhs_kraz255b1_cargo_open_msv",
+	"RHS_Ural_MSV_01",
+	"RHS_Ural_Open_MSV_01",
+	"rhs_zil131_msv",
+	"rhs_zil131_open_msv",
+	"rhs_btr80_msv",
+	"rhs_btr80a_msv",
+	"rhs_bmp2d_msv", 
+	"RHS_Mi8mt_Cargo_vvsc",
+	"RHS_Mi24Vt_vvsc"
 ];
 
 // Enemy rotary-wings that will need to spawn in flight.
 opfor_choppers = [
-    "O_Heli_Transport_04_bench_F",                                      // Mi-290 Taru (Bench)
-    "O_Heli_Light_02_dynamicLoadout_F",                                 // Po-30 Orca (Armed)
-    "O_Heli_Attack_02_dynamicLoadout_F"                                 // Mi-48 Kajman
+	"RHS_Ka52_vvsc",
+	"RHS_Mi24P_vvsc",
+	"RHS_Mi24V_vvsc",
+	"RHS_Mi24Vt_vvsc",
+	"rhs_mi28n_vvsc",
+	"RHS_Mi8AMTSh_vvsc",
+	"RHS_Mi8MTV3_heavy_vvsc",
+	"RHS_Mi8mt_Cargo_vvsc"
 ];
 
 // Enemy fixed-wings that will need to spawn in the air.
 opfor_air = [
-    "O_Plane_CAS_02_dynamicLoadout_F",                                  // To-199 Neophron (CAS)
-    "O_Plane_Fighter_02_F"                                              // To-201 Shikra
+	"rhs_mig29s_vvs",
+	"rhs_mig29sm_vvs",
+	"RHS_Su25SM_vvs",
+	"RHS_T50_vvs_generic",
+	"RHS_T50_vvs_blueonblue",
+	"CUP_O_SU34_RU"
 ];
