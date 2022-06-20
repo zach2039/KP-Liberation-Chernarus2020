@@ -43,6 +43,19 @@
         "workshopId": "1598002157"
     },
     {
+        "sourceFolder": "kp_liberation.cup_chernarus_A3",
+        "missionName": "kp_liberation",
+        "map": "Chernarus 2020",
+        "configFile": "kp_liberation_config.sqf",
+        "variables": {
+            "KP_liberation_preset_blufor": 0,
+            "KP_liberation_preset_opfor": 0,
+            "KP_liberation_preset_resistance": 0,
+            "KP_liberation_preset_civilians": 7,
+            "KP_liberation_arsenal": 0
+        }
+    },
+    {
         "sourceFolder": "kp_liberation.Enoch",
         "missionName": "kp_liberation",
         "map": "Enoch",
