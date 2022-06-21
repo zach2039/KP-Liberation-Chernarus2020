@@ -93,7 +93,8 @@ infantry_units = [
 		AC  - Autocannon           - 200/ea
 		HC  - Heavy Cannon         - 300/ea
 		MA  - Mortar Artillery     - 500
-		RA  - Rocket Artillery     - 1000
+		CA  - Cannon Artillery     - 1000
+		RA  - Rocket Artillery     - 1250
 		PY  - Weapon Pylons        - 250/ea
 		CW  - CWIS                 - 250/ea
 		CM  - Cruise Missile       - 750/ea
@@ -162,7 +163,7 @@ light_vehicles = [
 	["rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy",140,60,90],			// 1HMG
 	["rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy",145,60,90],			// 1HMG
 	["rhsusf_M977A4_BKIT_M2_usarmy_wd",170,60,105],				// 1HMG
-	["rhsusf_M142_usarmy_WD",165,1000,100],						// 1RA
+	["rhsusf_M142_usarmy_WD",165,1250,100],						// 1RA
 	
 	// Unarmed MRAPs
 	["rhsusf_CGRCAT1A2_usmc_wd",300,0,130],
@@ -170,9 +171,9 @@ light_vehicles = [
 	["rhsusf_M1232_usarmy_wd",325,0,140],
 
 	// Armed MRAPs
-	["CUP_B_Ridgback_LMG_GB_W",305,30,130]						// 1LMG
-	["rhsusf_CGRCAT1A2_M2_usmc_wd",300,60,130]					// 1HMG
-	["rhsusf_CGRCAT1A2_Mk19_usmc_wd",300,120,130]				// 1GMG
+	["CUP_B_Ridgback_LMG_GB_W",305,30,130],						// 1LMG
+	["rhsusf_CGRCAT1A2_M2_usmc_wd",300,60,130],					// 1HMG
+	["rhsusf_CGRCAT1A2_Mk19_usmc_wd",300,120,130],				// 1GMG
 	["rhsusf_M1220_M2_usarmy_wd",315,60,140],					// 1HMG
 	["rhsusf_M1220_MK19_usarmy_wd",315,120,140],				// 1GMG
 	["rhsusf_M1220_M153_M2_usarmy_wd",335,60,140],				// CROWS,1HMG
@@ -248,18 +249,20 @@ heavy_vehicles = [
 	["CUP_B_AAV_USMC",610,180,330],								// 1HMG,1GMG
 
 	// Armed Tanks
-	["CUP_B_M60A3_TTS_USMC",750,750,300],
-	["CUP_B_Leopard2A6_GER",750,750,300],
-	["CUP_B_Challenger2_Woodland_BAF",750,750,300],
-	["rhsusf_m1a1hc_wd",750,750,300],
-	["rhsusf_m1a1aimwd_usarmy",750,750,300],
-	["rhsusf_m1a1fep_wd",750,750,300],
-	["rhsusf_m1a2sep1wd_usarmy",750,750,300],
-	["rhsusf_m1a2sep2wd_usarmy",750,750,300],
-	["rhsusf_m1a1aim_tuski_wd",1000,750,400],
-	["rhsusf_m1a2sep1tuskiwd_usarmy",1000,750,400],
-	["rhsusf_m1a2sep1tuskiiwd_usarmy",1000,750,400],
-	["rhsusf_m109_usarmy",600,1250,300]
+	["CUP_B_M60A3_TTS_USMC",600,390,350],						// 1LMG,1HMG,1HC	
+	["CUP_B_Leopard2A6_GER",650,390,360],						// LD,1LMG,1HMG,1HC
+	["CUP_B_Challenger2_Woodland_BAF",680,360,370],				// LD,2LMG,1HC
+	["rhsusf_m1a1hc_wd",710,390,380],							// CROWS,1LMG,1HMG,1HC
+	["rhsusf_m1a1fep_wd",720,390,380],							// CROWS,1LMG,1HMG,1HC
+	["rhsusf_m1a1aimwd_usarmy",730,390,390],					// CROWS,1LMG,1HMG,1HC 
+	["rhsusf_m1a1aim_tuski_wd",740,390,400],					// CROWS,1LMG,1HMG,1HC
+	["rhsusf_m1a2sep1wd_usarmy",760,390,400],					// 1LMG,1HMG,1HC
+	["rhsusf_m1a2sep2wd_usarmy",780,390,400],					// CROWS,LD,1LMG,1HMG,1HC
+	["rhsusf_m1a2sep1tuskiwd_usarmy",770,390,410],				// 1LMG,1HMG,1HC
+	["rhsusf_m1a2sep1tuskiiwd_usarmy",780,390,420],				// 1LMG,1HMG,1HC
+	["rhsusf_m109_usarmy",850,1000,450],						// 1CA
+	["CUP_B_M270_DPICM_USMC",870,1250,460],						// 1RA
+	["CUP_B_M270_HE_USMC",870,1250,460]							// 1RA
 ];
 
 air_vehicles = [
@@ -280,8 +283,6 @@ air_vehicles = [
 	["CUP_B_Merlin_HC3A_Armed_GB",300,300,150],
 	["RHS_CH_47F",300,300,150],
 	["rhsusf_CH53E_USMC_GAU21",300,300,150],
-
-	// Attack Helicopters
 	["RHS_MELB_AH6M",600,600,300],
 	["CUP_B_AW159_GB",600,600,300],
 	["RHS_AH1Z_wd",600,600,300],
@@ -294,7 +295,7 @@ air_vehicles = [
 	["USAF_C130J",300,0,150],
 	["USAF_C130J_Cargo",300,0,150],
 
-	// Planes
+	// Armed Planes
 	["CUP_B_CESSNA_T41_ARMED_USA",300,100,150],
 	["CUP_B_AC47_Spooky_USA",300,100,150],
 	["CUP_B_MV22_USMC_RAMPGUN",300,100,150],
@@ -303,7 +304,7 @@ air_vehicles = [
 	["usaf_kc135",750,0,350],
 	["USAF_C17d",750,0,350],
 	
-	// Jets
+	// Armed Jets
 	["RHS_A10",1000,1000,400],              
 	["CUP_B_AV8B_DYN_USMC",1000,1000,400],
     ["USAF_A10",1500,1000,400],             
@@ -321,20 +322,20 @@ air_vehicles = [
 ];
 
 static_vehicles = [
-	["B_W_Static_Designator_01_F",50,0,0],
-	["CUP_B_SearchLight_static_USMC",50,0,0],
-	["RHS_M2StaticMG_MiniTripod_WD",50,100,0],
-	["RHS_M2StaticMG_WD",50,100,0],
-	["I_E_HMG_02_F",50,100,0],
-	["I_E_HMG_02_high_F",50,100,0],
-	["RHS_MK19_TriPod_WD",50,150,0],
-	["CUP_B_M134_A_USMC",50,150,0],
+	["B_W_Static_Designator_01_F",15,0,0],
+	["CUP_B_SearchLight_static_USMC",20,0,0],
+	["RHS_M2StaticMG_MiniTripod_WD",50,60,0],
+	["RHS_M2StaticMG_WD",50,60,0],
+	["I_E_HMG_02_F",50,60,0],
+	["I_E_HMG_02_high_F",50,60,0],
+	["RHS_MK19_TriPod_WD",50,120,0],
+	["CUP_B_M134_A_USMC",50,120,0],
 	["rhsgref_cdf_b_ZU23",50,150,0],
-	["RHS_TOW_TriPod_WD",50,250,0],
-	["RHS_Stinger_AA_pod_WD",50,250,0],                              
-	["RHS_M252_WD",80,250,0],                                     
-	["RHS_M119_WD",100,250,0],                                        
-    ["B_SAM_System_03_F",250,500,0]
+	["RHS_TOW_TriPod_WD",50,150,0],
+	["RHS_Stinger_AA_pod_WD",50,150,0],                              
+	["RHS_M252_WD",80,500,0],
+	["RHS_M119_WD",100,1000,0],                                        
+    ["B_SAM_System_03_F",250,150,0]
 ];
 
 buildings = [
