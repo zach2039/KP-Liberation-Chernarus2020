@@ -78,183 +78,176 @@ infantry_units = [
     ["rhsusf_airforce_jetpilot",10,0,0]                                 // Pilot
 ];
 
+/*
+	Supply Cost:
+		CROWS - Unmanned Gun       - +20
+		LD    - Laser Designator   - +20
+	
+	Ammo Cost:
+		LMG - Light Machine Gun    - 30/ea
+		HMG - Heavy Machine Gun    - 60/ea
+		RMG - Rotary Machine Gun   - 90/ea
+		GMG - Grendade Machine Gun - 120/ea
+		AT  - Anti-tank            - 150/ea 
+		AA  - Anti-air             - 150/ea
+		AC  - Autocannon           - 200/ea
+		HC  - Heavy Cannon         - 300/ea
+		MA  - Mortar Artillery     - 500
+		RA  - Rocket Artillery     - 1000
+		PY  - Weapon Pylons        - 250/ea
+		CW  - CWIS                 - 250/ea
+		CM  - Cruise Missile       - 750/ea
+*/
 light_vehicles = [
     // Personal vehicles
-    ["B_T_Quadbike_01_F",50,0,25],
-	["CUP_I_Datsun_4seat",50,0,25],
-	["CUP_O_Hilux_unarmed_CR_CIV_Tan",50,0,25],
+	["edaly_horse_01",25,0,0],
+	["edaly_horse_02",25,0,0],
+	["edaly_horse_03",25,0,0],
+    ["B_T_Quadbike_01_F",40,0,25],
+	["CUP_I_Datsun_4seat",60,0,35],
+	["CUP_O_Hilux_unarmed_CR_CIV_Tan",60,0,35],
 	
 	// Unarmed Cars
-	["CUP_I_M151_SYND",100,0,50],
-	["rhsusf_m1025_w",100,0,50],
-	["rhsusf_m1043_w",100,0,50],
-	["rhsusf_m998_w_2dr_halftop",100,0,50],
-	["rhsusf_m998_w_2dr",100,0,50],
-	["rhsusf_m998_w_4dr_fulltop",100,0,50],
-	["rhsusf_m998_w_4dr_halftop",100,0,50],
-	["rhsusf_m998_w_4dr",100,0,50],
-	["CUP_B_LR_Transport_GB_W",100,0,50],
-	["rhsusf_m1151_usarmy_wd",100,0,50],
-	["rhsusf_m1152_usarmy_wd",100,0,50],
-	["rhsusf_m1165_usarmy_wd",100,0,50],
+	["CUP_I_M151_SYND",65,0,35],
+	["CUP_B_LR_Transport_GB_W",70,0,40],
+	["rhsusf_m998_w_2dr_halftop",80,0,45],
+	["rhsusf_m998_w_2dr",80,0,45],
+	["rhsusf_m998_w_4dr_fulltop",85,0,45],
+	["rhsusf_m998_w_4dr_halftop",85,0,45],
+	["rhsusf_m998_w_4dr",85,0,45],
+	["rhsusf_m1025_w",90,0,55],
+	["rhsusf_m1043_w",95,0,55],
+	["rhsusf_m1151_usarmy_wd",100,0,60],
+	["rhsusf_m1152_usarmy_wd",105,0,60],
+	["rhsusf_m1165_usarmy_wd",110,0,60],
 	
-
-	// LMG Cars
-	["rhsusf_m1151_m240_v1_usarmy_wd",100,50,50],
-	["rhsusf_m1151_m240_v2_usarmy_wd",100,50,50],
-
-	// HMG Cars
-	["CUP_I_M151_M2_SYND",100,100,50],
-	["CUP_B_LR_MG_GB_W",100,100,50],
-	["CUP_B_LR_Special_M2_GB_W",100,100,50],
-	["CUP_B_Jackal2_L2A1_GB_W",100,100,50],
-	["CUP_B_BAF_Coyote_L2A1_W",100,100,50],
-	["rhsusf_m1025_w_m2",100,100,50],
-	["rhsusf_m1043_w_m2",100,100,50],
-	["rhsusf_m1151_m2crows_usarmy_wd",100,100,50],
-	["rhsusf_m1151_m2_v1_usarmy_wd",100,100,50],
-	["rhsusf_m1151_m2_v2_usarmy_wd",100,100,50],
-	["rhsusf_m1151_m2_lras3_v1_usarmy_wd",100,100,50],
-	["rhsusf_m1151_m2_v2_usarmy_wd",100,100,50],
-	
-	// GMG Cars
-	["CUP_B_LR_Special_GMG_GB_W",100,150,50],
-	["CUP_B_BAF_Coyote_GMG_W",100,150,50],
-	["CUP_B_Jackal2_GMG_GB_W",100,150,50],
-	["rhsusf_m1025_w_mk19",100,150,50],
-	["rhsusf_m1025_w_mk19",100,150,50],
-	["rhsusf_m1043_w_mk19",100,150,50],
-	["rhsusf_m1151_mk19crows_usarmy_wd",100,150,50],
-	["rhsusf_m1151_mk19_v1_usarmy_wd",100,150,50],
-	["rhsusf_m1151_mk19_v2_usarmy_wd",100,150,50],
-
-	// AT Cars
-	["rhsusf_m966_w",100,200,50],
-	["rhsusf_m1045_w",100,200,50],
-	
-	// AA Cars
-	["CUP_B_nM1097_AVENGER_USA_WDL",100,200,50],
+	// Armed Cars
+	["CUP_I_M151_M2_SYND",65,60,35],							// 1HMG
+	["CUP_B_LR_MG_GB_W",70,60,40],								// 1HMG
+	["CUP_B_LR_Special_M2_GB_W",70,60,40],						// 1HMG
+	["CUP_B_LR_Special_GMG_GB_W",70,120,40],					// 1GMG
+	["CUP_B_Jackal2_L2A1_GB_W",75,60,55],						// 1HMG
+	["CUP_B_Jackal2_GMG_GB_W",75,120,55],						// 1GMG
+	["CUP_B_BAF_Coyote_L2A1_W",80,60,55],						// 1HMG
+	["CUP_B_BAF_Coyote_GMG_W",80,120,55],						// 1GMG
+	["rhsusf_m1025_w_m2",90,60,55],								// 1HMG
+	["rhsusf_m1025_w_mk19",90,120,55],							// 1GMG
+	["rhsusf_m966_w",90,150,50],								// 1AT
+	["rhsusf_m1043_w_m2",95,60,55],								// 1HMG
+	["rhsusf_m1043_w_mk19",90,120,55],							// 1GMG
+	["rhsusf_m1045_w",95,150,55],								// 1AT
+	["CUP_B_nM1097_AVENGER_USA_WDL",150,150,70],				// 1AA
+	["rhsusf_m1151_m240_v1_usarmy_wd",100,30,60],				// 1LMG
+	["rhsusf_m1151_m2_v1_usarmy_wd",105,60,60],					// 1HMG
+	["rhsusf_m1151_m2_lras3_v1_usarmy_wd",130,70,60],			// LD,1HMG
+	["rhsusf_m1151_m2crows_usarmy_wd",140,60,65],				// CROWS,1HMG
+	["rhsusf_m1151_mk19crows_usarmy_wd",135,120,65],			// CROWS,1GMG
+	["rhsusf_m1151_mk19_v1_usarmy_wd",105,120,60],				// 1GMG
+	["rhsusf_m1151_m240_v2_usarmy_wd",100,30,60],				// 1LMG
+	["rhsusf_m1151_m2_v2_usarmy_wd",115,60,65],					// 1HMG
+	["rhsusf_m1151_mk19_v2_usarmy_wd",115,120,65],				// 1GMG
+	["rhsusf_m1151_m2_v3_usmc_wd",120,60,65],					// 1HMG
+	["CUP_B_M1165_GMV_WDL_USA",120,90,65],						// 1RMG
 
 	// Unarmed Trucks
-	["CUP_B_MTVR_BAF_WOOD",150,0,100],
-	["rhsusf_M1084A1P2_WD_fmtv_usarmy",150,0,100],
-	["rhsusf_M1084A1P2_B_WD_fmtv_usarmy",150,0,100],
-	["rhsusf_M1083A1P2_B_WD_fmtv_usarmy",150,0,100],
-	["rhsusf_M1083A1P2_WD_fmtv_usarmy",150,0,100],
-	["rhsusf_M977A4_usarmy_wd",150,0,100],
-	["rhsusf_M977A4_BKIT_usarmy_wd",150,0,100],
+	["CUP_B_MTVR_USMC",120,0,80],
+	["rhsusf_M1083A1P2_WD_fmtv_usarmy",130,0,85],
+	["rhsusf_M1083A1P2_B_WD_fmtv_usarmy",140,0,90],
+	["rhsusf_M1084A1P2_WD_fmtv_usarmy",135,0,85],
+	["rhsusf_M1084A1P2_B_WD_fmtv_usarmy",145,0,90],
+	["rhsusf_M977A4_usarmy_wd",160,0,100],
+	["rhsusf_M977A4_BKIT_usarmy_wd",170,0,105],
 
-	// HMG Trucks
-	["rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy",150,100,100],
-	["rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy",150,100,100],
-	["rhsusf_M977A4_BKIT_M2_usarmy_wd",150,100,100],
-	
-	// Artillery Trucks
-	["rhsusf_M142_usarmy_WD",100,1500,50],
+	// Armed Trucks
+	["rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy",140,60,90],			// 1HMG
+	["rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy",145,60,90],			// 1HMG
+	["rhsusf_M977A4_BKIT_M2_usarmy_wd",170,60,105],				// 1HMG
+	["rhsusf_M142_usarmy_WD",165,1000,100],						// 1RA
 	
 	// Unarmed MRAPs
-	["rhsusf_CGRCAT1A2_usmc_wd",300,0,150],
-	["rhsusf_M1220_usarmy_wdwa",300,0,150],
-	["rhsusf_M1232_usarmy_wd",300,0,150],
+	["rhsusf_CGRCAT1A2_usmc_wd",300,0,130],
+	["rhsusf_M1220_usarmy_wdwa",315,0,135],
+	["rhsusf_M1232_usarmy_wd",325,0,140],
 
-	// LMG MRAPs
-	["CUP_B_Mastiff_LMG_GB_W",300,50,150],
-	["CUP_B_Ridgback_LMG_GB_W",300,50,150],
-	["CUP_B_Wolfhound_LMG_GB_W",300,50,150],
-
-	// HMG MRAPs
-	["rhsusf_CGRCAT1A2_M2_usmc_wd",300,100,150],
-	["CUP_B_Ridgback_HMG_GB_W",300,100,150],
-	["CUP_B_Mastiff_HMG_GB_W",300,100,150],
-	["CUP_B_Wolfhound_HMG_GB_W",300,100,150],
-	["rhsusf_M1220_M153_M2_usarmy_wd",300,100,150],
-	["rhsusf_M1220_M2_usarmy_wd",300,100,150],
-	["rhsusf_M1230_M2_usarmy_wd",300,100,150],
-	["rhsusf_M1232_M2_usarmy_wd",300,100,150],
-	["rhsusf_M1237_M2_usarmy_wd",300,100,150],
-
-	// GMG MRAPs
-	["rhsusf_CGRCAT1A2_Mk19_usmc_wd",300,150,150],
-	["CUP_B_Ridgback_GMG_GB_W",300,150,150],
-	["CUP_B_Mastiff_GMG_GB_W",300,150,150],
-	["CUP_B_Wolfhound_GMG_GB_W",300,150,150],
-	["rhsusf_M1220_M153_MK19_usarmy_wd",300,150,150],
-	["rhsusf_M1220_MK19_usarmy_wd",300,150,150],
-	["rhsusf_M1230_MK19_usarmy_wd",300,150,150],
-	["rhsusf_M1232_MK19_usarmy_wd",300,150,150],
-	["rhsusf_M1237_MK19_usarmy_wd",300,150,150],
-	
-	// HMG/GMG MRAPs
-	["rhsusf_M1117_W",300,250,150],
+	// Armed MRAPs
+	["CUP_B_Ridgback_LMG_GB_W",305,30,130]						// 1LMG
+	["rhsusf_CGRCAT1A2_M2_usmc_wd",300,60,130]					// 1HMG
+	["rhsusf_CGRCAT1A2_Mk19_usmc_wd",300,120,130]				// 1GMG
+	["rhsusf_M1220_M2_usarmy_wd",315,60,140],					// 1HMG
+	["rhsusf_M1220_MK19_usarmy_wd",315,120,140],				// 1GMG
+	["rhsusf_M1220_M153_M2_usarmy_wd",335,60,140],				// CROWS,1HMG
+	["rhsusf_M1220_M153_MK19_usarmy_wd",335,120,140],			// CROWS,1GMG
+	["CUP_B_Wolfhound_LMG_GB_W",300,30,145],					// 1LMG
+	["CUP_B_Mastiff_LMG_GB_W",320,30,145],						// 1LMG
+	["rhsusf_M1232_MC_M2_usmc_wd",320,60,150],					// 1HMG
+	["rhsusf_M1230_M2_usarmy_wd",320,60,140],					// 1HMG
+	["rhsusf_M1230_MK19_usarmy_wd",320,120,140],				// 1GMG
+	["rhsusf_M1232_M2_usarmy_wd",325,60,145],					// 1HMG
+	["rhsusf_M1232_MK19_usarmy_wd",325,120,145],				// 1GMG
+	["rhsusf_M1237_M2_usarmy_wd",330,60,145],					// 1HMG
+	["rhsusf_M1237_MK19_usarmy_wd",330,120,145],				// 1GMG
+	["rhsusf_M1117_W",300,180,130],								// 1HMG,1GMG
 		
 	// Unarmed Boats
-	["pook_PBX_BLUFOR",100,0,25],
-	["rhsgref_hidf_canoe",100,0,25],
-	["rhsgref_hidf_rhib",100,0,25],
-	["C_Scooter_Transport_01_F",100,0,25],
+	["rhsgref_hidf_canoe",25,0,0],
+	["C_Scooter_Transport_01_F",40,0,15],
+	["pook_PBX_BLUFOR",50,0,25],
+	["rhsgref_hidf_rhib",60,0,30],
+	["CUP_B_MK10_GB",700,0,175],
+	["CUP_B_LCU1600_USMC",850,0,250],
 	
-	// Attack Boats
-	["pook_SOCR_M134b_USMC",200,150,100],
-	["pook_SOCR_M134_USMC",200,150,100],
-	["pook_SOCR_M2_USMC",200,150,100],
-	["pook_SOCR_M2b_USMC",200,150,100],
-	["pook_SOCR_H_M134b_USMC",200,150,100],
-	["pook_SOCR_H_M134_USMC",200,150,100],
-	["pook_SOCR_H_M2_USMC",200,150,100],
-	["pook_SOCR_H_M2b_USMC",200,150,100],
-	["pook_PBR_Transport_BLUFOR",200,150,100],
-	["pook_PBR_GUNBOAT_BLUFOR",200,150,100],
-	["CUP_B_RHIB_USMC",200,150,100],
-	["CUP_B_RHIB2Turret_USMC",200,150,100],
-
-	// Large Boats
-	["rhsusf_mkvsoc",1000,1000,500],
-	["CUP_B_MK10_GB",1000,1000,500],
-	["pook_LCAC_USMC",1000,1000,500],
-	["CUP_B_LCU1600_USMC",1000,1000,500],
-	["CUP_B_Frigate_ANZAC",1000,1000,500]
+	// Armed Boats
+	["pook_PBR_Transport_BLUFOR",80,60,45],						// 1HMG
+	["pook_PBR_GUNBOAT_BLUFOR",80,270,45],						// 1LMG,2HMG,1GMG
+	["pook_SOCR_M2_USMC",95,300,55],							// 2LMG,2HMG,1GMG
+	["pook_SOCR_M134_USMC",95,300,55],							// 2LMG,1HMG,2RMG
+	["pook_SOCR_M2b_USMC",95,390,55],							// 1LMG,2HMG,2GMG
+	["pook_SOCR_M134b_USMC",95,480,55],							// 1HMG,2RMG,2GMG
+	["pook_SOCR_H_M2_USMC",115,300,60],							// 2LMG,2HMG,1GMG
+	["pook_SOCR_H_M134_USMC",115,300,60],						// 2LMG,1HMG,2RMG
+	["pook_SOCR_H_M2b_USMC",115,390,60],						// 1LMG,2HMG,2GMG
+	["pook_SOCR_H_M134b_USMC",115,480,60],						// 1HMG,2RMG,2GMG
+	["CUP_B_RHIB_USMC",125,60,65],								// 1HMG
+	["CUP_B_RHIB2Turret_USMC",125,180,65],						// 1HMG,1GMG
+	["rhsusf_mkvsoc",750,330,200],								// 2HMG,1RMG,1GMG
+	["pook_LCAC_USMC",775,120,225],								// 2HMG
+	["CUP_B_Frigate_ANZAC",5425,1450,1575]						// 1CW,1AA,1HC,1CM
 ];
 
 heavy_vehicles = [
 	// Unarmed APCs
-	["rhsusf_m113_usarmy_unarmed",500,0,200],
-	["CUP_B_AAV_Unarmed_USMC",500,0,200],
+	["rhsusf_m113_usarmy_unarmed",400,0,250],
+	["CUP_B_AAV_Unarmed_USMC",430,0,275],
 
-	// LMG APCs
-	["CUP_B_LAV25_HQ_USMC",500,50,200],
-	["rhsusf_m113_usarmy_M240",500,50,200],
-	["CUP_B_FV432_Bulldog_GB_W",500,50,200],
+	// Armed APCs
+	["rhsusf_m113_usarmy_M240",400,30,250],						// 1LMG
+	["rhsusf_m113_usarmy_M2_90",400,60,250],					// 1HMG
+	["rhsusf_m113_usarmy",410,60,250],							// 1HMG
+	["rhsusf_m113_usarmy_MK19",400,120,250],					// 1GMG
+	["CUP_B_LAV25_HQ_USMC",400,30,200],							// 1LMG
+	["CUP_B_LAV25_USMC",405,230,200],							// 1LMG,1AC
+	["CUP_B_LAV25M240_USMC",405,260,200],						// 2LMG,1AC
+	["rhsusf_stryker_m1126_m2_wd",415,60,215],					// 1HMG
+	["rhsusf_stryker_m1127_m2_wd",435,60,215],					// LD,1HMG
+	["rhsusf_stryker_m1126_mk19_wd",415,120,215],				// 1GMG
+	["rhsusf_stryker_m1132_m2_np_wd",420,60,220],				// 1HMG
+	["rhsusf_stryker_m1132_m2_wd",425,60,220],					// 1HMG
+	["rhsusf_stryker_m1134_wd",420,180,220],					// 1LMG,1AT
+	["CUP_B_FV432_Bulldog_GB_W",430,30,270],					// 1LMG
+	["CUP_B_FV432_Bulldog_GB_W_RWS",450,60,270],				// CROWS,1HMG
+	["CUP_B_MCV80_GB_W",470,230,280],							// 1LMG,1AC
+	["CUP_B_MCV80_GB_W_SLAT",480,230,280],						// 1LMG,1AC
+	["CUP_B_FV510_GB_W",500,230,290],							// 1LMG,1AC
+	["CUP_B_FV510_GB_W_SLAT",510,230,290],						// 1LMG,1AC
+	["RHS_M2A2_wd",550,380,300],								// 1LMG,1AC,1AT
+	["RHS_M6_wd",550,380,300],									// 1LMG,1AC,1AA
+	["RHS_M2A2_BUSKI_WD",570,380,310],							// LD,1LMG,1AC,1AT
+	["RHS_M2A3_wd",580,350,330],								// LD,1LMG,1AC,1AT
+	["RHS_M2A3_BUSKI_wd",590,350,340],							// LD,1LMG,1AC,1AT
+	["RHS_M2A3_BUSKIII_wd",600,350,350],						// LD,1LMG,1AC,1AT
+	["CUP_B_AAV_USMC",610,180,330],								// 1HMG,1GMG
 
-	// HMG APCs
-	["rhsusf_m113_usarmy",500,100,200],
-	["rhsusf_m113_usarmy_M2_90",500,100,200],
-	["CUP_B_FV432_Bulldog_GB_W_RWS",500,100,200],
-
-	// GMG APCs
-	["rhsusf_m113_usarmy_MK19",500,150,200],
-	
-	// GMG/HMG APCs
-	["CUP_B_AAV_USMC",500,250,200],
-	
-	// AC/LMG APCs
-	["CUP_B_LAV25_USMC",500,300,200],
-	["CUP_B_MCV80_GB_W",500,300,200],
-	["CUP_B_MCV80_GB_W_SLAT",500,300,200],
-	["CUP_B_FV510_GB_W",500,300,200],
-	["CUP_B_FV510_GB_W_SLAT",500,300,200],
-	
-	// AC/2xLMG APCs
-	["CUP_B_LAV25M240_USMC",500,350,200],
-	["RHS_M2A2_wd",500,350,200],
-	["RHS_M2A2_BUSKI_WD",500,350,200],
-	["RHS_M2A3_wd",500,350,200],
-	["RHS_M2A3_BUSKI_wd",500,350,200],
-	["RHS_M2A3_BUSKIII_wd",500,350,200],
-	
-	// AA/AC APCs
-	["RHS_M6_wd",500,500,200],
-	
-	// Light Tanks
+	// Armed Tanks
 	["CUP_B_M60A3_TTS_USMC",750,750,300],
 	["CUP_B_Leopard2A6_GER",750,750,300],
 	["CUP_B_Challenger2_Woodland_BAF",750,750,300],
@@ -263,13 +256,9 @@ heavy_vehicles = [
 	["rhsusf_m1a1fep_wd",750,750,300],
 	["rhsusf_m1a2sep1wd_usarmy",750,750,300],
 	["rhsusf_m1a2sep2wd_usarmy",750,750,300],
-	
-	// Heavy Tanks
 	["rhsusf_m1a1aim_tuski_wd",1000,750,400],
 	["rhsusf_m1a2sep1tuskiwd_usarmy",1000,750,400],
 	["rhsusf_m1a2sep1tuskiiwd_usarmy",1000,750,400],
-	
-	// Artillery
 	["rhsusf_m109_usarmy",600,1250,300]
 ];
 

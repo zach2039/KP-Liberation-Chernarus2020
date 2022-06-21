@@ -128,5 +128,13 @@ KPLIB_objectInits = [
             _this allowFleeing 0;
         },
         true
-    ]
+    ],
+
+	// Move Libertad horses to friendly side on spawn or load
+	[
+		["edaly_horse_06", "edaly_horse_07", "edaly_horse_09", "edaly_horse_10", "edaly_horse_01", "edaly_horse_08", "edaly_horse_03", "edaly_horse_05", "edaly_horse_02", "edaly_horse_04", "edaly_horse_nosaddle_01"],
+		{
+			_this joinSilent GRLIB_side_friendly;
+		}
+	]
 ];
